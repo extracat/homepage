@@ -1,0 +1,208 @@
+/*!
+ * Start Bootstrap - Creative Bootstrap Theme (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+
+
+@font-face {
+    font-family: 'Lato';
+    src: url('../lato-web/lato-light.eot');
+    src: url('../lato-web/lato-light.eot?#iefix') format('embedded-opentype'),
+         url('../lato-web/lato-light.woff') format('woff'),
+         url('../lato-web/lato-light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('../lato-web/lato-italic.eot');
+    src: url('../lato-web/lato-italic.eot?#iefix') format('embedded-opentype'),
+         url('../lato-web/lato-italic.woff') format('woff'),
+         url('../lato-web/lato-italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: "Lato", "Arial", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+
+body { font-size: 18px;}
+@media(min-width:600px) {body { font-size: 24px;}}
+@media(min-width:800px) {body { font-size: 28px;}}
+@media(min-width:1200px) {body { font-size: 30px;}}
+@media(min-width:1400px) {body { font-size: 34px;}}
+@media(min-width:1700px) {body { font-size: 38px;}}
+
+img.catface { width: 120px;}
+@media(min-width:800px) {img.catface { width: 130px;}}
+@media(min-width:1200px) {img.catface { width: 140px;}}
+@media(min-width:1400px) {img.catface { width: 150px;}}
+@media(min-width:1700px) {img.catface { width: 160px;}}
+
+img.iconkabe{ width:66px;margin-bottom:8px;margin-left:5px;margin-right:5px;}
+img.iconkadr{ width: 60px;margin-left:5px;margin-right:5px;}
+
+em {font-family: Lato,Arial,sans-serif;
+    font-weight: normal;
+    font-style: italic;
+    }
+
+a {
+    color: #f05f40;
+    -webkit-transition: all .35s;
+    -moz-transition: all .35s;
+    transition: all .35s;
+}
+
+a:hover,
+a:focus {
+    color: #eb3812;
+}
+
+
+
+p {
+    line-height: 1.4;
+}
+
+header .header-content .header-content-inner p {
+    margin-bottom: 30px;
+}
+
+
+@media(min-width:600px) {
+p {
+    
+    line-height: 1.5;
+}
+header .header-content .header-content-inner p {
+    margin-bottom: 50px;
+}
+
+}
+
+section {
+    padding: 100px 0;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+
+
+
+header {
+    position: relative;
+    width: 100%;
+    min-height: auto;
+    text-align: center;
+    color: #444444;
+
+
+}
+
+header .header-content {
+    position: relative;
+    width: 100%;
+    padding: 100px 15px;
+    text-align: center;
+}
+
+header .header-content .header-content-inner h1 {
+    margin-top: 0;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+header .header-content .header-content-inner hr {
+    margin: 30px auto;
+}
+
+
+
+    header {
+        min-height: 100%;
+    }
+
+    header .header-content {
+        position: absolute;
+        top: 50%;
+        padding: 0 30px;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+
+    header .header-content .header-content-inner {
+        margin-right: auto;
+        margin-left: auto;
+        max-width: 1400px;
+    }
+
+    header .header-content .header-content-inner p {
+        margin-right: auto;
+        margin-left: auto;
+        max-width: 90%;
+    }
+    
+@media(min-width:600px) {header .header-content .header-content-inner p{max-width: 80%;}}
+   
+@media(min-width:800px) {header .header-content .header-content-inner {max-width:1000px;}}
+@media(min-width:1200px) {header .header-content .header-content-inner {max-width: 1050px;}}
+@media(min-width:1400px) {header .header-content .header-content-inner {max-width: 1200px;}}
+@media(min-width:1700px) {header .header-content .header-content-inner {max-width: 1300px;}}
+
+
+
+.text-primary {
+    color: #f05f40;
+}
+
+.no-gutter > [class*=col-] {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+
+
+::-moz-selection {
+    text-shadow: none;
+    color: #fff;
+    background: #222;
+}
+
+::selection {
+    text-shadow: none;
+    color: #fff;
+    background: #222;
+}
+
+img::selection {
+    color: #fff;
+    background: 0 0;
+}
+
+img::-moz-selection {
+    color: #fff;
+    background: 0 0;
+}
+
+body {
+    webkit-tap-highlight-color: #222;
+}

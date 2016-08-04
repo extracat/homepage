@@ -1,0 +1,42 @@
+
+body {
+    overflow: hidden;
+    line-height: 1;
+    -webkit-backface-visibility: hidden;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+
+.bg-canvas {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: #f5f5f5;
+    position: fixed;
+    z-index: -10;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden;
+}
+
+
+ .bg-canvas, body, html {
+    height: 100%;
+}
+
+a, abbr, acronym, address, applet, b, big, blockquote, body, caption,
+center, cite, code, dd, del, dfn, div, dl, dt, em, fieldset, font, form, h1,
+h2, h3, h4, h5, h6, html, i, iframe, img, ins, kbd, label, legend, li, object,
+ol, p, pre, q, s, samp, small, span, strike, strong, sub, sup, table, tbody,
+td, tfoot, th, thead, tr, tt, u, ul, var {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+    background: 0 0;
+}
+
