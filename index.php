@@ -11,14 +11,15 @@ $langs=array(
 function getBestMatch($default, $langs)
     {
 
+        $language=array();
         if (($list = strtolower($_SERVER['HTTP_ACCEPT_LANGUAGE']))) {
             if (preg_match_all('/([a-z]{1,8}(?:-[a-z]{1,8})?)(?:;q=([0-9.]+))?/', $list, $list)) {
-                $this->language = array_combine($list[1], $list[2]);
-                foreach ($this->language as $n => $v)
-                    $this->language[$n] = $v ? $v : 1;
-                arsort($this->language, SORT_NUMERIC);
+                $language = array_combine($list[1], $list[2]);
+                foreach ($language as $n => $v)
+                    $language[$n] = $v ? $v : 1;
+                arsort($language, SORT_NUMERIC);
             }
-        } else $this->language = array();
+        } 
 
 
         $languages=array();
@@ -30,7 +31,7 @@ function getBestMatch($default, $langs)
             }else $languages[strtolower($alias)]=strtolower($lang);
         }
 
-        foreach ($this->language as $l => $v) {
+        foreach ($language as $l => $v) {
             $s = strtok($l, '-'); // убираем то что идет после тире в языках вида "en-us, ru-ru"
             if (isset($languages[$s]))
                 return $languages[$s];
