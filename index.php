@@ -17,6 +17,7 @@ function getBestMatch($default, $langs)
                 $language = array_combine($list[1], $list[2]);
                 foreach ($language as $n => $v)
                     $language[$n] = $v ? $v : 1;
+                    print $language[$n];
                 arsort($language, SORT_NUMERIC);
             }
         } 
@@ -27,11 +28,14 @@ function getBestMatch($default, $langs)
             if (is_array($alias)) {
                 foreach ($alias as $alias_lang) {
                     $languages[strtolower($alias_lang)] = strtolower($lang);
+                    print $languages[strtolower($alias_lang)];
                 }
-            }else $languages[strtolower($alias)]=strtolower($lang);
+            } else $languages[strtolower($alias)]=strtolower($lang);
+            print $languages[strtolower($alias)];
         }
 
         foreach ($language as $l => $v) {
+            print $l;
             $s = strtok($l, '-'); // убираем то что идет после тире в языках вида "en-us, ru-ru"
             if (isset($languages[$s]))
                 return $languages[$s];
