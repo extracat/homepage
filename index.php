@@ -12,6 +12,7 @@ function getBestMatch($default, $langs)
     {
 
         print_r($_SERVER['HTTP_ACCEPT_LANGUAGE']);
+        print_r($_SERVER["HTTP_USER_AGENT"]);
         print "\n";
 
         $language=array();
