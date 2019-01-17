@@ -11,6 +11,9 @@ $langs=array(
 function getBestMatch($default, $langs)
     {
 
+        print $_SERVER['HTTP_ACCEPT_LANGUAGE'];
+        print '\n';
+
         $language=array();
         if (($list = strtolower($_SERVER['HTTP_ACCEPT_LANGUAGE']))) {
             if (preg_match_all('/([a-z]{1,8}(?:-[a-z]{1,8})?)(?:;q=([0-9.]+))?/', $list, $list)) {
