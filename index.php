@@ -1,7 +1,6 @@
 <?php
-echo $_SERVER['SERVER_NAME'];
-echo $_SERVER['HTTP_ACCEPT_LANGUAGE'];
-echo $_SERVER['HTTP_USER_AGENT'];
+echo $_SERVER;
+
 ?>
 
 <?php //require $_SERVER['DOCUMENT_ROOT']."/index.html";
