@@ -1,5 +1,15 @@
 <?php
-echo $_SERVER;
+
+print_r($_SERVER);
+
+foreach ($_SERVER as $s) {
+    echo $s;
+}
+
+foreach ($_SERVER as $s) {
+    print_r($s);
+}
+
 
 ?>
 
