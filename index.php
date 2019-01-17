@@ -1,14 +1,20 @@
 <?php
 
 print_r($_SERVER);
+echo "<br>";
+echo "<br>";
 
 foreach ($_SERVER as $s) {
     echo $s;
+    echo "<br>";
 }
+echo "<br>";
 
 foreach ($_SERVER as $s) {
     print_r($s);
+    echo "<br>";
 }
+echo "<br>";
 
 
 ?>
