@@ -1,3 +1,5 @@
 {
-	"alias": ["basistov", "basistov.com", "www.basistov.com"]
+	"alias": ["basistov", "basistov.com", "www.basistov.com"],
+	"version": 2,
+	"builds": [{ "src": "*.php", "use": "@now/php" }]
 }
