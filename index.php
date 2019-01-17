@@ -1,10 +1,16 @@
+<?php
+echo $_SERVER['SERVER_NAME'];
+echo $_SERVER['HTTP_ACCEPT_LANGUAGE'];
+echo $_SERVER['HTTP_USER_AGENT'];
+?>
+
 <?php //require $_SERVER['DOCUMENT_ROOT']."/index.html";
 // header( 'Location: /index.html' ); 
 
 
-        print_r($_SERVER['HTTP_ACCEPT_LANGUAGE']);
-        print_r($_SERVER['HTTP_USER_AGENT']);
 
+
+/*
 
 $langs=array(
             'ru'=>array('ru','be','uk','ky','ab','mo','et','lv'),
@@ -51,5 +57,6 @@ function getBestMatch($default, $langs)
 
 print getBestMatch('en', $langs);
 
+*/
 
 ?>
