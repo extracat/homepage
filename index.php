@@ -11,8 +11,8 @@ $langs=array(
 function getBestMatch($default, $langs)
     {
 
-        print $_SERVER['HTTP_ACCEPT_LANGUAGE'];
-        print '\n';
+        print_r($_SERVER['HTTP_ACCEPT_LANGUAGE']);
+        print "\n";
 
         $language=array();
         if (($list = strtolower($_SERVER['HTTP_ACCEPT_LANGUAGE']))) {
