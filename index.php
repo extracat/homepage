@@ -1,6 +1,11 @@
 <?php //require $_SERVER['DOCUMENT_ROOT']."/index.html";
 // header( 'Location: /index.html' ); 
 
+
+        print_r($_SERVER['HTTP_ACCEPT_LANGUAGE']);
+        print_r($_SERVER['HTTP_USER_AGENT']);
+
+
 $langs=array(
             'ru'=>array('ru','be','uk','ky','ab','mo','et','lv'),
             'de'=>'de',
@@ -11,9 +16,6 @@ $langs=array(
 function getBestMatch($default, $langs)
     {
 
-        print_r($_SERVER['HTTP_ACCEPT_LANGUAGE']);
-        print_r($_SERVER["HTTP_USER_AGENT"]);
-        print "\n";
 
         $language=array();
         if (($list = strtolower($_SERVER['HTTP_ACCEPT_LANGUAGE']))) {
