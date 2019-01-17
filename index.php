@@ -8,7 +8,7 @@ $langs=array(
         );
 
 
- public function getBestMatch($default, $langs)
+function getBestMatch($default, $langs)
     {
 
         if (($list = strtolower($_SERVER['HTTP_ACCEPT_LANGUAGE']))) {
