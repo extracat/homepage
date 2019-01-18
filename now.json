@@ -1,5 +1,5 @@
 {
 	"alias": ["basistov", "basistov.com", "www.basistov.com"],
 	"version": 2,
-	"builds": [{ "src": "*.php", "use": "@now/php" }]
+	"_commented_builds": [{ "src": "*.php", "use": "@now/php" }]
 }
