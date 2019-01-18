@@ -1,7 +1,12 @@
 <?php 
 foreach ($_SERVER as $k => $v) {
-    echo "_SERVER[$k] => $v<br>";
+    echo "[$k] => $v<br>";
 } 
+
+foreach ($_SERVER['argv'] as $k => $v) {
+    echo "[argv][$k] => $v<br>";
+} 
+
 ?>
 
 <?php //require $_SERVER['DOCUMENT_ROOT']."/index.html";
