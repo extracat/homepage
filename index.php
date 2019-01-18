@@ -1,6 +1,6 @@
 <?php 
-foreach ($_SERVER as $k => $v) {
-    echo "\$a[$k] => $v.\n";
+foreach ($_SERVER as $v) {
+    echo "$v\n";
 } 
 ?>
 
