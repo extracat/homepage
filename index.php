@@ -1,22 +1,7 @@
-<?php
-
-print_r($_SERVER);
-echo "<br>";
-echo "<br>";
-
-foreach ($_SERVER as $s) {
-    echo $s;
-    echo "<br>";
-}
-echo "<br>";
-
-foreach ($_SERVER as $s) {
-    print_r($s);
-    echo "<br>";
-}
-echo "<br>";
-
-
+<?php 
+foreach ($_SERVER as $k => $s) {
+    echo $k + " => " + $s + "<br>";
+} 
 ?>
 
 <?php //require $_SERVER['DOCUMENT_ROOT']."/index.html";
