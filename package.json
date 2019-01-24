@@ -1,0 +1,11 @@
+{
+  "name": "extracat",
+  "version": "1.0.0",
+  "description" : "Simple hello world Node.js app",
+ "scripts": { "start": "node app.js"},
+  "dependencies": {},
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "repository": {}
+}
