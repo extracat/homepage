@@ -4,12 +4,12 @@ var cfenv = require('cfenv');
 var appEnv = cfenv.getAppEnv();
 
 if (appEnv.isLocal) {
-	var host = "localhost";
+	var hostname = "localhost";
 	var port = 3000;
 }
 else
 {
-	var host = appEnv.host;
+	var hostname = appEnv.host;
 	var port = appEnv.port;
 }
 

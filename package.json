@@ -1,9 +1,14 @@
 {
   "name": "extracat",
   "version": "1.0.0",
-  "description" : "Simple hello world Node.js app",
- "scripts": { "start": "node app.js"},
-  "dependencies": {},
+  "description": "Simple hello world Node.js app",
+  "license": "Apache-2.0",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "cfenv": "^1.1.0"
+  },
   "engines": {
     "node": ">=0.10.0"
   },
