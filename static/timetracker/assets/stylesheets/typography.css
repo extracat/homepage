@@ -19,7 +19,8 @@ ul li:before {
 }
 
 h1,h2,h3,h4 {
-    font-family: 'mplus-2m-bold';
+    del_font-family: 'mplus-2m-bold';
+    font-family: 'M PLUS 1 Code';
 }
 
 h1 {
