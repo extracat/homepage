@@ -3,6 +3,7 @@
 	"version": 2,
 	"headers": [
 		{
+			"source": "/app.js",
 			"headers": [
 				{
 					"key": "Cache-Control",
