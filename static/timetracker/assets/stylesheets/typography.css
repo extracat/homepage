@@ -1,0 +1,162 @@
+body {
+    font-family: 'Raleway';
+}
+p a, ul a, ol a {
+    font-weight: 800;
+    color: #0E51E8;
+    text-decoration: none;
+}
+ul li {
+    position: relative;
+}
+
+ul li:before {
+    content: '';
+    position: absolute;
+    left: 0px;
+    background-color: #0E51E8;
+    border-radius: 50%;
+}
+
+h1,h2,h3,h4 {
+    font-family: 'mplus-2m-bold';
+}
+
+h1 {
+    font-size: 46.79px;
+    letter-spacing: 1.29px;
+}
+h2 {
+    font-size: 36px;
+    letter-spacing: 0.51px;
+    line-height: 39.5px;
+}
+h3 {
+    font-size: 35.09px;
+    letter-spacing: 1.26px;
+    line-height: 35.75px;
+}
+p {
+    font-size: 12px;
+    line-height: 17.54px;
+}
+.tt-lead p {
+    font-size: 20.96px;
+    letter-spacing: 0.19px;
+    line-height: 29.89px;
+}
+.feature p, .more-lead p {
+    font-size: 15.6px;
+    line-height: 20.79px;
+}
+
+
+ul li {
+    font-size: 12px;
+    line-height: 17.54px;
+    padding-left: 15px;
+    margin-bottom: 16px;
+}
+
+ul li:before {
+    margin-top: 6px;
+    left: 0px;
+    height: 6px;
+    width: 6px;
+}
+
+ul p {
+    /*line-height: 21px;
+    font-size: 14px;*/
+}
+
+@media (min-width: 768px){
+    p {
+        font-size: 18px;
+        line-height: 24px;
+    }
+
+    ul li {
+        line-height: 21px;
+        font-size: 14px;
+        padding-left: 20px;
+        margin-bottom: 16px;
+    }
+
+    ul li:before {
+        margin-top: 6px;
+        left: 0px;
+        height: 6px;
+        width: 6px;
+    }
+
+    ul p {
+        line-height: 21px;
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 55.43px;
+        letter-spacing: 1.53px;
+    }
+    h2 {
+        font-size: 49.27px;
+        letter-spacing: 1.53px;
+        line-height: 53.9px;
+    }
+    h3 {
+        font-size: 41.58px;
+        letter-spacing: 1.5px;
+        line-height: 42.34px;
+    }
+    .tt-lead p {
+        font-size: 24.83px;
+        letter-spacing: 0.23px;
+        line-height: 35.41px;
+    }
+}
+
+@media (min-width: 1024px){
+    body {
+        font-size: 18px;
+        line-height: 27px;
+    }
+    ul li {
+        padding-left: 33px;
+        margin-bottom: 25px;
+    }
+
+    ul li:before {
+        margin-top: 8px;
+        left: 0px;
+        height: 9px;
+        width: 9px;
+    }
+
+    h1 {
+        font-size: 72px;
+        letter-spacing: 2px;
+    }
+    h2 {
+        font-size: 64px;
+        letter-spacing: 2px;
+        line-height: 66px;
+        margin-top: 40px;
+        margin-bottom: 50px;
+    }
+    h3 {
+        font-size: 54px;
+        letter-spacing: 1.95px;
+        line-height: 55px;
+        margin-bottom: 30px;
+    }
+    .feature p, .more-lead p {
+    font-size: 24px;
+    line-height: 32px;
+    }
+    .tt-lead p {
+        font-size: 32.25px;
+        letter-spacing: 0.3px;
+        line-height: 46px;
+    }
+}
