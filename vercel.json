@@ -1,0 +1,14 @@
+{
+	"alias": ["basistov", "basistov.com", "www.basistov.com"],
+	"version": 2,
+	"headers": [
+		{
+			"headers": [
+				{
+					"key": "Cache-Control",
+					"value": "s-maxage=1, stale-while-revalidate=59"
+				}
+			]
+		}
+	]
+}
