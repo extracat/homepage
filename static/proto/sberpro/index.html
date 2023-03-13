@@ -1,519 +1,1355 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-    <title>Untitled Document</title>
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>Главная</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <link type="text/css" href="resources/css/reset.css" rel="Stylesheet" />
-    <link type="text/css" href="resources/css/default.css" rel="Stylesheet" />
-    <!--<link href='https://fonts.googleapis.com/css?family=Nunito:300' rel='stylesheet' type='text/css'>-->
-
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <link href="resources/css/jquery-ui-themes.css" type="text/css" rel="stylesheet"/>
+    <link href="resources/css/axure_rp_page.css" type="text/css" rel="stylesheet"/>
+    <link href="data/styles.css" type="text/css" rel="stylesheet"/>
+    <link href="files/главная/styles.css" type="text/css" rel="stylesheet"/>
+    <script src="resources/scripts/jquery-1.7.1.min.js"></script>
+    <script src="resources/scripts/jquery-ui-1.8.10.custom.min.js"></script>
+    <script src="resources/scripts/prototypePre.js"></script>
+    <script src="data/document.js"></script>
+    <script src="resources/scripts/prototypePost.js"></script>
+    <script src="files/главная/data.js"></script>
     <script type="text/javascript">
-        if (location.href.toString().indexOf('file://localhost/') == 0) {
-            location.href = location.href.toString().replace('file://localhost/', 'file:///');
-        }
+      $axure.utils.getTransparentGifPath = function() { return 'resources/images/transparent.gif'; };
+      $axure.utils.getOtherPath = function() { return 'resources/Other.html'; };
+      $axure.utils.getReloadPath = function() { return 'resources/reload.html'; };
     </script>
-
-    <!-- 8.0.0.3372 -->
-<script src="resources/scripts/jquery-1.7.1.min.js"></script>
-<script src="resources/scripts/startPre.js"></script>
-<script src="data/document.js"></script>
-
-    <style type="text/css">
-
-#outerContainer {
-	width:1000px;
-	height:1500px;
-}
-
-.vsplitbar {
-    width: 3px;
-    /*background: #B9B9B9;*/
-    border-right: 1px solid #8f949a;
-}
-
-.vsplitbar:hover, .vsplitbar.active {
-    background: #8f949a;
-}
-
-#rightPanel {
-    background-color: White;
-}
-
-/*#leftPanel {
-    min-width: 120px;
-}*/
-
-.splitterMask {
-   position:absolute;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 100%;
-   overflow: hidden;
-   background-image: url(resources/images/transparent.gif);
-   z-index: 20000;
-}
-
-    </style>
-    <script type="text/javascript" language="JavaScript"><!--
-        var SITEMAP_COLLAPSE_VAR_NAME = 'c';
-        var PLUGIN_VAR_NAME = 'g';
-        var FOOTNOTES_VAR_NAME = 'fn';
-        var ADAPTIVE_VIEW_VAR_NAME = 'view';
-        var lastLeftPanelWidth = 295;
-        var toolBarOnly = true;
-
-        // isolate scope
-        (function() {
-            setUpController();
-            
-            var configuration = $axure.document.configuration;
-            var _settings = {};
-            _settings.projectId = configuration.prototypeId;
-            _settings.isAxshare = configuration.isAxshare;
-            _settings.loadFeedbackPlugin = configuration.loadFeedbackPlugin;
-            var cHash = getHashStringVar(SITEMAP_COLLAPSE_VAR_NAME);
-            _settings.startCollapsed = cHash == "1";
-            if(cHash == "2") closePlayer();
-            var gHash = getHashStringVar(PLUGIN_VAR_NAME);
-            if(gHash == "") gHash = 1;
-            _settings.startPluginGid = gHash;
-
-            $axure.player.settings = _settings;
-
-            $(window).bind('load', function() {
-                if(CHROME_5_LOCAL && !$('body').attr('pluginDetected')) {
-                    window.location = 'resources/chrome/chrome.html';
-                }
-            });
-
-            $(document).ready(function() {
-                $axure.page.bind('load.start', mainFrame_onload);
-                $axure.messageCenter.addMessageListener(messageCenter_message);
-
-                $(document).on('pluginShown', function (event, data) {
-                    setVarInCurrentUrlHash('g', data ? data : '');
-                });
-
-                $(document).on('pluginCreated', function(event, data) {
-                    if($axure.player.settings.startPluginGid == data) {
-                        $axure.player.showPlugin(data);
-                    }
-                });
-
-                if($axure.player.settings.loadFeedbackPlugin) {
-                    if($axure.player.settings.isAxshare) {
-                        $axure.utils.loadJS('/Scripts/plugins/feedback/feedback8.js');
-                    } else {
-                        $axure.utils.loadJS('http://share.axure.com/Scripts/plugins/feedback/feedback8.js');
-                    }
-                }
-
-                if(navigator.userAgent.indexOf("MSIE") >= 0) $('#outerContainer').width('100%');
-                initialize();
-                if($axure.player.settings.startCollapsed) $('#outerContainer').splitter({ sizeLeft: 0 });
-                else $('#outerContainer').splitter({ sizeLeft: lastLeftPanelWidth });
-                $('#leftPanel').width(lastLeftPanelWidth);
-                
-                $(window).resize(function() { resizeContent(); });
-
-                $('#maximizePanelContainer').hide();
-
-                initializeLogo();
-
-                $(window).resize();
-                resizeContent();
-                
-                $axure.player.collapseToBar();
-
-                if($axure.player.settings.startCollapsed) {
-                    collapse();
-                    $('#leftPanel').width(0);
-                }
-
-                if(MOBILE_DEVICE) {
-                    $('#interfaceControlFrameMinimizeContainer').height('45px');
-                    $('#interfaceControlFrameMinimizeContainer a').height('45px');
-                    $('#interfaceControlFrameHeaderContainer').css('margin-top','45px');
-                    $('#interfaceControlFrameCloseContainer a').css('padding','10px 0px');
-                    $('#maximizePanelContainer').height('45px');//.css('top','inherit').css('bottom','0px');
-
-                    $('body').removeClass('hashover');
-
-                    if(IOS) {
-                        $('#rightPanel').css('overflow', 'auto').css('-webkit-overflow-scrolling', 'touch').css('-ms-overflow-x', 'hidden');
-
-                        window.addEventListener("orientationchange", function() {
-                            var viewport = document.querySelector("meta[name=viewport]");
-                            //so iOS doesn't zoom when switching back to portrait
-                            viewport.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0');
-                            viewport.setAttribute('content', 'width=device-width, initial-scale=1.0');
-                            resizeContent();
-                        }, false);
-
-                        $axure.page.bind('load.start', function() {
-                            resizeContent();
-                        });
-                    }
-                }
-
-            });
-
-            function initialize() {
-                var legacyQString = getQueryString("Page");
-                if (legacyQString.length > 0) {
-                    location.href = location.href.substring(0, location.href.indexOf("?")) + "#p=" + legacyQString;
-                    return;
-                }
-
-                var mainFrame = document.getElementById("mainFrame");
-                //if it's local file on safari, test if we can access mainframe after its loaded
-                if(SAFARI && document.location.href.indexOf('file://') >= 0) {
-                    $(mainFrame).load(function () {
-                        var canAccess;
-                        try {
-                            var mainFrameWindow = mainFrame.contentWindow || mainFrame.contentDocument;
-                            mainFrameWindow['safari_file_CORS'] = 'Y';
-                            canAccess = mainFrameWindow['safari_file_CORS'] === 'Y';
-                        } catch(err) {
-                            canAccess = false;
-                        }
-
-                        if(!canAccess) window.location = 'resources/chrome/safari.html';
-                    });
-                }
-
-                mainFrame.contentWindow.location.href = getInitialUrl();
-            }
-
-            function initializeLogo() {
-                if($axure.document.configuration.logoImagePath) {
-                    var image = new Image();
-                    image.onload = function() {
-                        $('#logoImage').css('max-width', this.width + 'px');
-                        $axure.player.resizeContent();
-                    };
-                    image.src = $axure.document.configuration.logoImagePath;
-                
-                    $('#interfaceControlFrameLogoImageContainer').html('<img id="logoImage" src="" />');
-                    $('#logoImage').attr('src', $axure.document.configuration.logoImagePath).load(function() { resizeContent(); });
-                } else $('#interfaceControlFrameLogoImageContainer').hide();
-
-                if ($axure.document.configuration.logoImageCaption) {
-                    $('#interfaceControlFrameLogoCaptionContainer').html($axure.document.configuration.logoImageCaption);
-                } else $('#interfaceControlFrameLogoCaptionContainer').hide();
-
-                if(!$('#interfaceControlFrameLogoImageContainer').is(':visible') && !$('#interfaceControlFrameLogoCaptionContainer').is(':visible')) {
-                    $('#interfaceControlFrameLogoContainer').hide();
-                }
-            }
-
-            var resizeContent = $axure.player.resizeContent = function() {
-                var newHeight = $(window).height();
-                var newWidth = $(window).width();
-
-                var controlContainerHeight = newHeight;// - 30;
-                if($('#interfaceControlFrameLogoContainer').is(':visible')) controlContainerHeight -= $('#interfaceControlFrameLogoContainer').outerHeight();// + 16;
-
-                $('#outerContainer').height(newHeight).width(newWidth);
-                $('.vsplitbar').height(newHeight);
-                $('#leftPanel').height(newHeight);
-                $('#interfaceControlFrame').height(newHeight);
-                $('#interfaceControlFrameContainer').height(newHeight);
-                $('#interfaceControlFrameHostContainer').height(controlContainerHeight);
-
-                $('#rightPanel').height(newHeight);
-                $('#mainFrame').height(newHeight);
-
-                if($('#leftPanel').is(':visible')) $('#rightPanel').width($(window).width() - $('#leftPanel').width() - 1);// $('.vsplitbar').width());
-                else $('#rightPanel').width($(window).width());
-
-                $(document).trigger('ContainerHeightChange',[controlContainerHeight]);
-
-                if(MOBILE_DEVICE) {
-                    if(!(getHashStringVar(ADAPTIVE_VIEW_VAR_NAME).length > 0)) $axure.messageCenter.postMessage('setAdaptiveViewForSize', {'width':newWidth, 'height':$('#rightPanel').height()});
-                }
-            }
-
-            var collapseToBar = $axure.player.collapseToBar = function() {
-                lastLeftPanelWidth = $('#leftPanel').width();
-                $('#leftPanel').width('55px');
-                $('.vsplitbar').hide();
-                $('#rightPanel').width($(window).width() - $('#leftPanel').width());
-                $(window).resize();
-                $('#outerContainer').trigger('resize');
-                toolBarOnly = true;
-            }
-
-            var expandFromBar = $axure.player.expandFromBar = function() {
-                if($('.vsplitbar').is(':visible')) return;
-
-                $('#leftPanel').width(lastLeftPanelWidth);
-                $('.vsplitbar').show();
-                $('#rightPanel').width($(window).width() - $('#leftPanel').width() - 1);// $('.vsplitbar').width());
-                $(window).resize();
-                $('#outerContainer').trigger('resize');
-                toolBarOnly = false;
-            }
-
-        })();
-
-        function messageCenter_message(message, data) {
-            if(message == 'expandFrame') expand();
-            else if(message == 'getCollapseFrameOnLoad' && $axure.player.settings.startCollapsed && !MOBILE_DEVICE) $axure.messageCenter.postMessage('collapseFrameOnLoad');
-        }
-
-        
-        function getInitialUrl() {
-            var pageName = getHashStringVar("p");
-            if(pageName.length > 0) return pageName + ".html";
-            else {
-                var url = getFirstPageUrl($axure.document.sitemap.rootNodes);
-                return (url ? url : "about:blank");
-            }
-        }
-
-        function getFirstPageUrl(nodes) {
-            for (var i = 0; i < nodes.length; i++) {
-                var node = nodes[i];
-                if (node.url) return node.url;
-                else {
-                    var hasChildren = (node.children && node.children.length > 0);
-                    if (hasChildren) {
-                        var url = getFirstPageUrl(node.children);
-                        if (url) return url;
-                    }
-                }
-            }
-            return null;
-        }
-
-        function closePlayer() {
-            if($axure.page.location) window.location.href = $axure.page.location;
-            else {
-                var pageFile = getInitialUrl();
-                var currentLocation = window.location.toString();
-                window.location.href = currentLocation.substr(0, currentLocation.lastIndexOf("/") + 1) + pageFile;
-            }
-        }
-
-        function replaceHash(newHash) {
-            var currentLocWithoutHash = window.location.toString().split('#')[0];
-
-            //We use replace so that every hash change doesn't get appended to the history stack.
-            //We use replaceState in browsers that support it, else replace the location
-            if(typeof window.history.replaceState != 'undefined') {
-                try {
-                    //Chrome 45 (Version 45.0.2454.85 m) started throwing an error here when generated locally (this only happens with sitemap open) which broke all interactions.
-                    //try catch breaks the url adjusting nicely when the sitemap is open, but all interactions and forward and back buttons work.
-                    //Uncaught SecurityError: Failed to execute 'replaceState' on 'History': A history state object with URL 'file:///C:/Users/Ian/Documents/Axure/HTML/Untitled/start.html#p=home' cannot be created in a document with origin 'null'.
-                    window.history.replaceState(null, null, currentLocWithoutHash + newHash);
-                } catch(ex) {}
-            } else {
-                window.location.replace(currentLocWithoutHash + newHash);
-            }
-        }
-
-        function collapse() {
-            setVarInCurrentUrlHash('c', 1);
-            if(!toolBarOnly) lastLeftPanelWidth = $('#leftPanel').width();
-
-            $('#maximizePanelContainer').show();
-            $('#leftPanel').hide();
-            $('.vsplitbar').hide();
-            $('#rightPanel').width($(window).width());
-            $(window).resize();
-            $('#outerContainer').trigger('resize');
-
-            $(document).trigger('sidebarCollapse');
-
-            if(MOBILE_DEVICE) {
-                $('#maximizePanelContainer').animate({
-                    top:$('#rightPanel').height() - $('#maximizePanelContainer').height()
-                }, 300, 'swing', function() {
-                    $('#maximizePanelContainer').css('top', 'inherit').css('bottom', '0px');
-                });
-            }
-        }
-
-        function expand() {
-            if(MOBILE_DEVICE) {
-                $('#maximizePanelContainer').css('top', '0px').css('bottom', 'inherit');
-            }
-
-            deleteVarFromCurrentUrlHash('c');
-            $('#maximizePanelContainer').hide();
-            $('#leftPanel').width(lastLeftPanelWidth);
-            $('#leftPanel').show();
-            if(!toolBarOnly) {
-                $('.vsplitbar').show();
-                $('#rightPanel').width($(window).width() - $('#leftPanel').width() - 1);
-            } else {
-                $axure.player.collapseToBar();
-            }
-            $(window).resize();
-            $('#outerContainer').trigger('resize');
-
-            $(document).trigger('sidebarExpanded');
-        }
-
-
-        function mainFrame_onload() {
-            if($axure.page.pageName) document.title = $axure.page.pageName;
-        }
-
-        function getQueryString(query) {
-            var qstring = self.location.href.split("?");
-            if(qstring.length < 2) return "";
-            return GetParameter(qstring, query);
-        }
-        
-        function GetParameter(qstring, query) {
-            var prms = qstring[1].split("&");
-            var frmelements = new Array();
-            var currprmeter, querystr = "";
-
-            for(var i = 0; i < prms.length; i++) {
-                currprmeter = prms[i].split("=");
-                frmelements[i] = new Array();
-                frmelements[i][0] = currprmeter[0];
-                frmelements[i][1] = currprmeter[1];
-            }
-
-            for(j = 0; j < frmelements.length; j++) {
-                if(frmelements[j][0].toLowerCase() == query.toLowerCase()) {
-                    querystr = frmelements[j][1];
-                    break;
-                }
-            }
-            return querystr;
-        }
-        
-        function getHashStringVar(query) {
-            var qstring = self.location.href.split("#");
-            if(qstring.length < 2) return "";
-            return GetParameter(qstring, query);
-        }
-
-        function setHashStringVar(currentHash, varName, varVal) {
-            var varWithEqual = varName + '=';
-            var poundVarWithEqual = varVal === '' ? '' :  '#' + varName + '=' + varVal;
-            var ampVarWithEqual = varVal === '' ? '' :  '&' + varName + '=' + varVal;
-            var hashToSet = '';
-
-            var pageIndex = currentHash.indexOf('#' + varWithEqual);
-            if(pageIndex == -1) pageIndex = currentHash.indexOf('&' + varWithEqual);
-            if(pageIndex != -1) {
-                var newHash = currentHash.substring(0, pageIndex);
-
-                newHash = newHash == '' ? poundVarWithEqual : newHash + ampVarWithEqual;
-
-                var ampIndex = currentHash.indexOf('&', pageIndex + 1);
-                if(ampIndex != -1) {
-                    newHash = newHash == '' ? '#' + currentHash.substring(ampIndex + 1) : newHash + currentHash.substring(ampIndex);
-                }
-                hashToSet = newHash;
-            } else if(currentHash.indexOf('#') != -1) {
-                hashToSet = currentHash + ampVarWithEqual;
-            } else {
-                hashToSet = poundVarWithEqual;
-            }
-
-            if(hashToSet != '' || varVal == '') {
-                return hashToSet;
-            }
-
-            return null;
-        }
-
-        function setVarInCurrentUrlHash(varName, varVal) {
-            var newHash = setHashStringVar(window.location.hash, varName, varVal);
-
-            if(newHash != null) {
-                replaceHash(newHash);
-            }
-        }
-
-        function deleteHashStringVar(currentHash, varName) {
-            var varWithEqual = varName + '=';
-
-            var pageIndex = currentHash.indexOf('#' + varWithEqual);
-            if(pageIndex == -1) pageIndex = currentHash.indexOf('&' + varWithEqual);
-            if(pageIndex != -1) {
-                var newHash = currentHash.substring(0, pageIndex);
-
-                var ampIndex = currentHash.indexOf('&', pageIndex + 1);
-
-                //IF begin of string....if none blank, ELSE # instead of & and rest
-                //IF in string....prefix + if none blank, ELSE &-rest
-                if(newHash == '') { //beginning of string
-                    newHash = ampIndex != -1 ? '#' + currentHash.substring(ampIndex + 1) : '';
-                } else { //somewhere in the middle
-                    newHash = newHash + (ampIndex != -1 ? currentHash.substring(ampIndex) : '');
-                }
-
-                return newHash;
-            }
-
-            return null;
-        }
-
-        function deleteVarFromCurrentUrlHash(varName) {
-            var newHash = deleteHashStringVar(window.location.hash, varName);
-
-            if(newHash != null) {
-                replaceHash(newHash);
-            }
-        }
-    --></script>
-    
-    <link type="text/css" rel="Stylesheet" href="plugins/sitemap/styles/sitemap.css" />
-    <link type="text/css" rel="Stylesheet" href="plugins/page_notes/styles/page_notes.css" />
-    <link type="text/css" rel="Stylesheet" href="plugins/debug/styles/debug.css" />
-    <script src="resources/scripts/startPost.js"></script>
-
-
-    <!--<link type="text/css" rel="Stylesheet" href="plugins/recordplay/styles/recordplay.css" />
-    <script type="text/javascript" src="plugins/recordplay/recordplay.js"></script>-->
-    
-
-</head>
-<body scroll="no" class="hashover">
-    <div id="outerContainer">
-
-        <div id="leftPanel">
-            <div id="interfaceControlFrame">
-                <div id="interfaceControlFrameMinimizeContainer">
-                    <a title="Collapse" id="interfaceControlFrameMinimizeButton" onclick="collapse();">&nbsp;</a>
-                </div>
-                <div id="interfaceControlFrameHeaderContainer">
-                    <ul id="interfaceControlFrameHeader"></ul>
-                </div>
-                <div id="interfaceControlFrameContainer">
-                    <div id="interfaceControlFrameLogoContainer">
-                        <div id="interfaceControlFrameLogoImageContainer"></div>
-                        <div id="interfaceControlFrameLogoCaptionContainer"></div>
-                    </div>
-                    <div id="interfaceControlFrameHostContainer">
-                    </div>
-                </div>
-                <div id="interfaceControlFrameCloseContainer">
-                    <a title="Close" id="interfaceControlFrameCloseButton" onclick="closePlayer();">CLOSE</a>
-                </div>
+  </head>
+  <body>
+    <div id="base" class="">
+
+      <!-- Status (Dynamic Panel) -->
+      <div id="u0" class="ax_default" data-label="Status">
+        <div id="u0_state0" class="panel_state" data-label="before" style="">
+          <div id="u0_state0_content" class="panel_state_content">
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u1" class="ax_default widget_bg">
+              <div id="u1_div" class=""></div>
             </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u2" class="ax_default widget_h1">
+              <div id="u2_div" class=""></div>
+              <div id="u2_text" class="text ">
+                <p><span>SIGNATURE PENDING</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u3" class="ax_default widget_h1">
+              <div id="u3_div" class=""></div>
+              <div id="u3_text" class="text ">
+                <p><span>FOR SENDING</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u4" class="ax_default label">
+              <div id="u4_div" class=""></div>
+              <div id="u4_text" class="text ">
+                <p><span>Payment orders</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u5" class="ax_default label">
+              <div id="u5_div" class=""></div>
+              <div id="u5_text" class="text ">
+                <p><span>Payment requests</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u6" class="ax_default label">
+              <div id="u6_div" class=""></div>
+              <div id="u6_text" class="text ">
+                <p><span>Payment orders</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u7" class="ax_default badge">
+              <div id="u7_div" class=""></div>
+              <div id="u7_text" class="text ">
+                <p><span>51</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u8" class="ax_default badge">
+              <div id="u8_div" class=""></div>
+              <div id="u8_text" class="text ">
+                <p><span>2</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u9" class="ax_default badge">
+              <div id="u9_div" class=""></div>
+              <div id="u9_text" class="text ">
+                <p><span>32</span></p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div id="rightPanel">
-            <iframe id="mainFrame" name="mainFrame" width="100%" height="100%" src="" frameborder="0" style="display: block;" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <div id="u0_state1" class="panel_state" data-label="after" style="visibility: hidden;">
+          <div id="u0_state1_content" class="panel_state_content">
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u10" class="ax_default widget_bg">
+              <div id="u10_div" class=""></div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u11" class="ax_default widget_h1">
+              <div id="u11_div" class=""></div>
+              <div id="u11_text" class="text ">
+                <p><span>NEW DOCUMENTS AND STATUSES</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u12" class="ax_default widget_h1">
+              <div id="u12_div" class=""></div>
+              <div id="u12_text" class="text ">
+                <p><span>SIGNATURE PENDING</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u13" class="ax_default label">
+              <div id="u13_div" class=""></div>
+              <div id="u13_text" class="text ">
+                <p><span>Messages from bank</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u14" class="ax_default label">
+              <div id="u14_div" class=""></div>
+              <div id="u14_text" class="text ">
+                <p><span>Declined by bank</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u15" class="ax_default label">
+              <div id="u15_div" class=""></div>
+              <div id="u15_text" class="text ">
+                <p><span>Payment orders</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u16" class="ax_default label">
+              <div id="u16_div" class=""></div>
+              <div id="u16_text" class="text ">
+                <p><span>Payment requests</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u17" class="ax_default badge">
+              <div id="u17_div" class=""></div>
+              <div id="u17_text" class="text ">
+                <p><span>5</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u18" class="ax_default badge">
+              <div id="u18_div" class=""></div>
+              <div id="u18_text" class="text ">
+                <p><span>2</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u19" class="ax_default badge">
+              <div id="u19_div" class=""></div>
+              <div id="u19_text" class="text ">
+                <p><span>51</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u20" class="ax_default badge">
+              <div id="u20_div" class=""></div>
+              <div id="u20_text" class="text ">
+                <p><span>2</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u21" class="ax_default box_1">
+              <div id="u21_div" class=""></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unnamed (Dynamic Panel) -->
+      <div id="u22" class="ax_default">
+        <div id="u22_state0" class="panel_state" data-label="State1" style="">
+          <div id="u22_state0_content" class="panel_state_content">
+
+            <!-- Unnamed (Group) -->
+            <div id="u23" class="ax_default" data-left="0" data-top="0" data-width="303" data-height="318">
+
+              <!-- Unnamed (Rectangle) -->
+              <div id="u24" class="ax_default widget_bg">
+                <div id="u24_div" class=""></div>
+              </div>
+
+              <!-- Unnamed (Rectangle) -->
+              <div id="u25" class="ax_default widget_h1">
+                <div id="u25_div" class=""></div>
+                <div id="u25_text" class="text ">
+                  <p><span>SAVED FILTERS</span></p>
+                </div>
+              </div>
+
+              <!-- Unnamed (Rectangle) -->
+              <div id="u26" class="ax_default label">
+                <div id="u26_div" class=""></div>
+                <div id="u26_text" class="text ">
+                  <p><span>Imported payments today</span></p>
+                </div>
+              </div>
+
+              <!-- Unnamed (Rectangle) -->
+              <div id="u27" class="ax_default label">
+                <div id="u27_div" class=""></div>
+                <div id="u27_text" class="text ">
+                  <p><span>Payrolls of Romashka Industries LLC</span></p>
+                </div>
+              </div>
+
+              <!-- Unnamed (Rectangle) -->
+              <div id="u28" class="ax_default label">
+                <div id="u28_div" class=""></div>
+                <div id="u28_text" class="text ">
+                  <p><span>Payrolls of Romashka Industries LLC</span></p>
+                </div>
+              </div>
+
+              <!-- Unnamed (Rectangle) -->
+              <div id="u29" class="ax_default badge">
+                <div id="u29_div" class=""></div>
+                <div id="u29_text" class="text ">
+                  <p><span>413</span></p>
+                </div>
+              </div>
+
+              <!-- Unnamed (Rectangle) -->
+              <div id="u30" class="ax_default badge">
+                <div id="u30_div" class=""></div>
+                <div id="u30_text" class="text ">
+                  <p><span>4311</span></p>
+                </div>
+              </div>
+
+              <!-- Unnamed (Rectangle) -->
+              <div id="u31" class="ax_default badge">
+                <div id="u31_div" class=""></div>
+                <div id="u31_text" class="text ">
+                  <p><span>25</span></p>
+                </div>
+              </div>
+
+              <!-- Unnamed (Rectangle) -->
+              <div id="u32" class="ax_default label">
+                <div id="u32_div" class=""></div>
+                <div id="u32_text" class="text ">
+                  <p><span>Foreign payments </span></p><p><span>without SVO</span></p>
+                </div>
+              </div>
+
+              <!-- Unnamed (Rectangle) -->
+              <div id="u33" class="ax_default label">
+                <div id="u33_div" class=""></div>
+                <div id="u33_text" class="text ">
+                  <p><span>All payments created manually</span></p>
+                </div>
+              </div>
+
+              <!-- Unnamed (Rectangle) -->
+              <div id="u34" class="ax_default badge">
+                <div id="u34_div" class=""></div>
+                <div id="u34_text" class="text ">
+                  <p><span>9</span></p>
+                </div>
+              </div>
+
+              <!-- Unnamed (Rectangle) -->
+              <div id="u35" class="ax_default badge">
+                <div id="u35_div" class=""></div>
+                <div id="u35_text" class="text ">
+                  <p><span>25</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vypiska (Dynamic Panel) -->
+      <div id="u36" class="ax_default" data-label="Vypiska">
+        <div id="u36_state0" class="panel_state" data-label="State1" style="">
+          <div id="u36_state0_content" class="panel_state_content">
+
+            <!-- Unnamed (Group) -->
+            <div id="u37" class="ax_default" data-left="0" data-top="0" data-width="319" data-height="127">
+
+              <!-- Unnamed (Rectangle) -->
+              <div id="u38" class="ax_default widget_bg">
+                <div id="u38_div" class=""></div>
+              </div>
+
+              <!-- Unnamed (Rectangle) -->
+              <div id="u39" class="ax_default widget_h1">
+                <div id="u39_div" class=""></div>
+                <div id="u39_text" class="text ">
+                  <p><span>STATEMENT ACTUALITY</span></p>
+                </div>
+              </div>
+
+              <!-- Unnamed (Rectangle) -->
+              <div id="u40" class="ax_default label">
+                <div id="u40_div" class=""></div>
+                <div id="u40_text" class="text ">
+                  <p><span>Night for all accounts</span></p>
+                </div>
+              </div>
+
+              <!-- Unnamed (Rectangle) -->
+              <div id="u41" class="ax_default label">
+                <div id="u41_div" class=""></div>
+                <div id="u41_text" class="text ">
+                  <p><span>Yesterday, 23:30</span></p>
+                </div>
+              </div>
+
+              <!-- Unnamed (Rectangle) -->
+              <div id="u42" class="ax_default label">
+                <div id="u42_div" class=""></div>
+                <div id="u42_text" class="text ">
+                  <p><span>Statement type:</span></p>
+                </div>
+              </div>
+
+              <!-- Unnamed (Rectangle) -->
+              <div id="u43" class="ax_default label">
+                <div id="u43_div" class=""></div>
+                <div id="u43_text" class="text ">
+                  <p><span>Date:</span></p>
+                </div>
+              </div>
+
+              <!-- Unnamed (Shape) -->
+              <div id="u44" class="ax_default icon">
+                <img id="u44_img" class="img " src="images/главная/u44.png"/>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="u36_state1" class="panel_state" data-label="State2" style="visibility: hidden;">
+          <div id="u36_state1_content" class="panel_state_content">
+
+            <!-- Unnamed (Group) -->
+            <div id="u45" class="ax_default" data-left="0" data-top="0" data-width="319" data-height="127">
+
+              <!-- Unnamed (Rectangle) -->
+              <div id="u46" class="ax_default widget_bg">
+                <div id="u46_div" class=""></div>
+              </div>
+
+              <!-- Unnamed (Rectangle) -->
+              <div id="u47" class="ax_default widget_h1">
+                <div id="u47_div" class=""></div>
+                <div id="u47_text" class="text ">
+                  <p><span>STATEMENT ACTUALITY</span></p>
+                </div>
+              </div>
+
+              <!-- Unnamed (Rectangle) -->
+              <div id="u48" class="ax_default label">
+                <div id="u48_div" class=""></div>
+                <div id="u48_text" class="text ">
+                  <p><span>Regular for all accounts</span></p>
+                </div>
+              </div>
+
+              <!-- Unnamed (Rectangle) -->
+              <div id="u49" class="ax_default label">
+                <div id="u49_div" class=""></div>
+                <div id="u49_text" class="text ">
+                  <p><span>Today, 12:30</span></p>
+                </div>
+              </div>
+
+              <!-- Unnamed (Rectangle) -->
+              <div id="u50" class="ax_default label">
+                <div id="u50_div" class=""></div>
+                <div id="u50_text" class="text ">
+                  <p><span>Statement type:</span></p>
+                </div>
+              </div>
+
+              <!-- Unnamed (Rectangle) -->
+              <div id="u51" class="ax_default label">
+                <div id="u51_div" class=""></div>
+                <div id="u51_text" class="text ">
+                  <p><span>Date:</span></p>
+                </div>
+              </div>
+
+              <!-- Unnamed (Shape) -->
+              <div id="u52" class="ax_default icon">
+                <img id="u52_img" class="img " src="images/главная/u44.png"/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Zapros (Dynamic Panel) -->
+      <div id="u53" class="ax_default" data-label="Zapros">
+        <div id="u53_state0" class="panel_state" data-label="no" style="">
+          <div id="u53_state0_content" class="panel_state_content">
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u54" class="ax_default widget_bg">
+              <div id="u54_div" class=""></div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u55" class="ax_default widget_h1">
+              <div id="u55_div" class=""></div>
+              <div id="u55_text" class="text ">
+                <p><span>STATEMENT REQUEST</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u56" class="ax_default second_menu">
+              <div id="u56_div" class=""></div>
+              <div id="u56_text" class="text ">
+                <p><span>Send request</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u57" class="ax_default label">
+              <div id="u57_div" class=""></div>
+              <div id="u57_text" class="text ">
+                <p><span>Bank statements are generated once every half an hour during the day, and once at night. Make a request if you need a more up-to-date extract.</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u58" class="ax_default label">
+              <div id="u58_div" class=""></div>
+              <div id="u58_text" class="text ">
+                <p><span>No current requests</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Horizontal Line) -->
+            <div id="u59" class="ax_default line">
+              <img id="u59_img" class="img " src="images/главная/u59.png"/>
+            </div>
+          </div>
+        </div>
+        <div id="u53_state1" class="panel_state" data-label="no-wait" style="visibility: hidden;">
+          <div id="u53_state1_content" class="panel_state_content">
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u60" class="ax_default widget_bg">
+              <div id="u60_div" class=""></div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u61" class="ax_default widget_h1">
+              <div id="u61_div" class=""></div>
+              <div id="u61_text" class="text ">
+                <p><span>STATEMENT REQUEST</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u62" class="ax_default second_menu">
+              <div id="u62_div" class=""></div>
+              <div id="u62_text" class="text ">
+                <p><span>Send request</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u63" class="ax_default label">
+              <div id="u63_div" class=""></div>
+              <div id="u63_text" class="text ">
+                <p><span>Bank statements are generated once every half an hour during the day, and once at night. Make a request if you need a more up-to-date extract.</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u64" class="ax_default label">
+              <div id="u64_div" class=""></div>
+              <div id="u64_text" class="text ">
+                <p><span>Sending request...</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Horizontal Line) -->
+            <div id="u65" class="ax_default line">
+              <img id="u65_img" class="img " src="images/главная/u59.png"/>
+            </div>
+          </div>
+        </div>
+        <div id="u53_state2" class="panel_state" data-label="yes" style="visibility: hidden;">
+          <div id="u53_state2_content" class="panel_state_content">
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u66" class="ax_default widget_bg">
+              <div id="u66_div" class=""></div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u67" class="ax_default widget_h1">
+              <div id="u67_div" class=""></div>
+              <div id="u67_text" class="text ">
+                <p><span>STATEMENT REQUEST</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u68" class="ax_default second_menu">
+              <div id="u68_div" class=""></div>
+              <div id="u68_text" class="text ">
+                <p><span>Get the statement</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u69" class="ax_default label">
+              <div id="u69_div" class=""></div>
+              <div id="u69_text" class="text ">
+                <p><span>The average time for generating a new statement is 5 minutes from the moment of the request. If the extract has not arrived, we recommend repeating after 5 minutes.</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u70" class="ax_default label">
+              <div id="u70_div" class=""></div>
+              <div id="u70_text" class="text ">
+                <p><span>Request sent</span></p><p><span>7 min ago</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Horizontal Line) -->
+            <div id="u71" class="ax_default line">
+              <img id="u71_img" class="img " src="images/главная/u59.png"/>
+            </div>
+          </div>
+        </div>
+        <div id="u53_state3" class="panel_state" data-label="yes-wait" style="visibility: hidden;">
+          <div id="u53_state3_content" class="panel_state_content">
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u72" class="ax_default widget_bg">
+              <div id="u72_div" class=""></div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u73" class="ax_default widget_h1">
+              <div id="u73_div" class=""></div>
+              <div id="u73_text" class="text ">
+                <p><span>STATEMENT REQUEST</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u74" class="ax_default label">
+              <div id="u74_div" class=""></div>
+              <div id="u74_text" class="text ">
+                <p><span>The average time for generating a new statement is 5 minutes from the moment of the request. If the extract has not arrived, we recommend repeating after 5 minutes.</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u75" class="ax_default label">
+              <div id="u75_div" class=""></div>
+              <div id="u75_text" class="text ">
+                <p><span>Statement receiving...</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Horizontal Line) -->
+            <div id="u76" class="ax_default line">
+              <img id="u76_img" class="img " src="images/главная/u59.png"/>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u77" class="ax_default second_menu">
+              <div id="u77_div" class=""></div>
+              <div id="u77_text" class="text ">
+                <p><span>Get the statement</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unnamed (Group) -->
+      <div id="u78" class="ax_default" data-left="997" data-top="81" data-width="296" data-height="523">
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u79" class="ax_default widget_bg">
+          <div id="u79_div" class=""></div>
         </div>
 
-    </div>
+        <!-- Unnamed (Rectangle) -->
+        <div id="u80" class="ax_default widget_h1">
+          <div id="u80_div" class=""></div>
+          <div id="u80_text" class="text ">
+            <p><span>BANK NEWS</span></p>
+          </div>
+        </div>
 
-    <div id="maximizePanelContainer">
-        <iframe id="expandFrame" src="resources/expand.html" width="100%" height="100%" scrolling="no" allowtransparency="true" frameborder="0"></iframe>
-    </div>
+        <!-- Unnamed (Image) -->
+        <div id="u81" class="ax_default image">
+          <img id="u81_img" class="img " src="images/главная/u81.png"/>
+          <div id="u81_text" class="text ">
+            <p><span>/</span></p>
+          </div>
+        </div>
 
-</body>
+        <!-- Unnamed (Image) -->
+        <div id="u82" class="ax_default image">
+          <img id="u82_img" class="img " src="images/главная/u82.png"/>
+        </div>
+      </div>
+
+      <!-- Unnamed (Group) -->
+      <div id="u83" class="ax_default" data-left="659" data-top="443" data-width="319" data-height="161">
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u84" class="ax_default widget_bg">
+          <img id="u84_img" class="img " src="images/главная/u84.png"/>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u85" class="ax_default widget_h1">
+          <div id="u85_div" class=""></div>
+          <div id="u85_text" class="text ">
+            <p><span>ADD WIDGET</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u86" class="ax_default widget_h1">
+          <div id="u86_div" class=""></div>
+          <div id="u86_text" class="text ">
+            <p><span>+</span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unnamed (menu) -->
+
+      <!-- bg (Dynamic Panel) -->
+      <div id="u88" class="ax_default" data-label="bg">
+        <div id="u88_state0" class="panel_state" data-label="State1" style="">
+          <div id="u88_state0_content" class="panel_state_content">
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u89" class="ax_default box_2">
+              <div id="u89_div" class=""></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- botommenu (Dynamic Panel) -->
+      <div id="u90" class="ax_default" data-label="botommenu">
+        <div id="u90_state0" class="panel_state" data-label="off" style="">
+          <div id="u90_state0_content" class="panel_state_content">
+          </div>
+        </div>
+        <div id="u90_state1" class="panel_state" data-label="on" style="visibility: hidden;">
+          <div id="u90_state1_content" class="panel_state_content">
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u91" class="ax_default box_2">
+              <div id="u91_div" class=""></div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u92" class="ax_default box_1">
+              <div id="u92_div" class=""></div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u93" class="ax_default label">
+              <div id="u93_div" class=""></div>
+              <div id="u93_text" class="text ">
+                <p><span>Selected</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u94" class="ax_default label">
+              <div id="u94_div" class=""></div>
+              <div id="u94_text" class="text ">
+                <p><span style="font-family:'Arial-BoldMT', 'Arial Bold', 'Arial';font-weight:700;">12</span><span style="font-family:'ArialMT', 'Arial';font-weight:400;"> из 732</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u95" class="ax_default label">
+              <div id="u95_div" class=""></div>
+              <div id="u95_text" class="text ">
+                <p><span>Amount</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u96" class="ax_default label">
+              <div id="u96_div" class=""></div>
+              <div id="u96_text" class="text ">
+                <p style="font-size:15px;"><span style="font-family:'Arial-BoldMT', 'Arial Bold', 'Arial';font-weight:700;font-size:16px;">1 345 892 725,34</span><span style="font-family:'ArialMT', 'Arial';font-weight:400;"> USD</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Image) -->
+            <div id="u97" class="ax_default image">
+              <img id="u97_img" class="img " src="images/главная/u97.png"/>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u98" class="ax_default label">
+              <div id="u98_div" class=""></div>
+              <div id="u98_text" class="text ">
+                <p><span>Send</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Shape) -->
+            <div id="u99" class="ax_default icon">
+              <img id="u99_img" class="img " src="images/главная/u99.png"/>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u100" class="ax_default label">
+              <div id="u100_div" class=""></div>
+              <div id="u100_text" class="text ">
+                <p><span>Duplicate</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u101" class="ax_default label">
+              <div id="u101_div" class=""></div>
+              <div id="u101_text" class="text ">
+                <p><span>Delete</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u102" class="ax_default label">
+              <div id="u102_div" class=""></div>
+              <div id="u102_text" class="text ">
+                <p><span>Sign</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- topmenu (Dynamic Panel) -->
+      <div id="u103" class="ax_default" data-label="topmenu">
+        <div id="u103_state0" class="panel_state" data-label="topmenu" style="">
+          <div id="u103_state0_content" class="panel_state_content">
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u104" class="ax_default box_2">
+              <img id="u104_img" class="img " src="images/главная/u104.png"/>
+            </div>
+
+            <!-- Unnamed (Group) -->
+            <div id="u105" class="ax_default" data-left="483.5" data-top="15" data-width="48" data-height="24.5">
+
+              <!-- Unnamed (Shape) -->
+              <div id="u106" class="ax_default icon">
+                <img id="u106_img" class="img " src="images/главная/u106.png"/>
+              </div>
+
+              <!-- Unnamed (Rectangle) -->
+              <div id="u107" class="ax_default heading_1">
+                <div id="u107_div" class=""></div>
+                <div id="u107_text" class="text ">
+                  <p><span>[</span></p>
+                </div>
+              </div>
+
+              <!-- Unnamed (Shape) -->
+              <div id="u108" class="ax_default icon">
+                <img id="u108_img" class="img " src="images/главная/u108.png"/>
+              </div>
+            </div>
+
+            <!-- Unnamed (Group) -->
+            <div id="u109" class="ax_default" data-left="340" data-top="10" data-width="49" data-height="30">
+
+              <!-- Unnamed (Rectangle) -->
+              <div id="u110" class="ax_default box_1">
+                <div id="u110_div" class=""></div>
+              </div>
+
+              <!-- Unnamed (Shape) -->
+              <div id="u111" class="ax_default icon">
+                <img id="u111_img" class="img " src="images/главная/u108.png"/>
+              </div>
+
+              <!-- Unnamed (Shape) -->
+              <div id="u112" class="ax_default icon">
+                <img id="u112_img" class="img " src="images/главная/u112.png"/>
+              </div>
+            </div>
+
+            <!-- Sync Dropdown (Dynamic Panel) -->
+            <div id="u113" class="ax_default ax_default_hidden" data-label="Sync Dropdown" style="display:none; visibility: hidden">
+              <div id="u113_state0" class="panel_state" data-label="State1" style="">
+                <div id="u113_state0_content" class="panel_state_content">
+
+                  <!-- Unnamed (Group) -->
+                  <div id="u114" class="ax_default" data-left="0" data-top="0.0294372515228574" data-width="224" data-height="254.970562748477">
+
+                    <!-- Unnamed (Rectangle) -->
+                    <div id="u115" class="ax_default box_2">
+                      <div id="u115_div" class=""></div>
+                    </div>
+
+                    <!-- Unnamed (Rectangle) -->
+                    <div id="u116" class="ax_default box_2">
+                      <div id="u116_div" class=""></div>
+                    </div>
+                  </div>
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u117" class="ax_default top_menu_dropdown">
+                    <div id="u117_div" class=""></div>
+                    <div id="u117_text" class="text ">
+                      <p><span>Send and receive</span></p>
+                    </div>
+                  </div>
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u118" class="ax_default top_menu_dropdown">
+                    <div id="u118_div" class=""></div>
+                    <div id="u118_text" class="text ">
+                      <p><span>Receive only</span></p>
+                    </div>
+                  </div>
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u119" class="ax_default top_menu_dropdown">
+                    <div id="u119_div" class=""></div>
+                    <div id="u119_text" class="text ">
+                      <p><span>Send only</span></p>
+                    </div>
+                  </div>
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u120" class="ax_default top_menu_dropdown">
+                    <div id="u120_div" class=""></div>
+                    <div id="u120_text" class="text ">
+                      <p><span>Statement for yesterday</span></p>
+                    </div>
+                  </div>
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u121" class="ax_default top_menu_dropdown">
+                    <div id="u121_div" class=""></div>
+                    <div id="u121_text" class="text ">
+                      <p><span>Update statement</span></p>
+                    </div>
+                  </div>
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u122" class="ax_default top_menu_dropdown">
+                    <div id="u122_div" class=""></div>
+                    <div id="u122_text" class="text ">
+                      <p><span>Request settings</span></p>
+                    </div>
+                  </div>
+
+                  <!-- Unnamed (Horizontal Line) -->
+                  <div id="u123" class="ax_default line">
+                    <img id="u123_img" class="img " src="images/главная/u123.png"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Unnamed (Group) -->
+            <div id="u124" class="ax_default" data-left="558" data-top="16" data-width="42" data-height="22">
+
+              <!-- Unnamed (Shape) -->
+              <div id="u125" class="ax_default icon">
+                <img id="u125_img" class="img " src="images/главная/u125.png"/>
+              </div>
+
+              <!-- Unnamed (Shape) -->
+              <div id="u126" class="ax_default icon">
+                <img id="u126_img" class="img " src="images/главная/u108.png"/>
+              </div>
+            </div>
+
+            <!-- Unnamed (Group) -->
+            <div id="u127" class="ax_default" data-left="411.5" data-top="15" data-width="48" data-height="24.5">
+
+              <!-- Unnamed (Shape) -->
+              <div id="u128" class="ax_default icon">
+                <img id="u128_img" class="img " src="images/главная/u128.png"/>
+              </div>
+
+              <!-- Unnamed (Rectangle) -->
+              <div id="u129" class="ax_default heading_1">
+                <div id="u129_div" class=""></div>
+                <div id="u129_text" class="text ">
+                  <p><span>[</span></p>
+                </div>
+              </div>
+
+              <!-- Unnamed (Shape) -->
+              <div id="u130" class="ax_default icon">
+                <img id="u130_img" class="img " src="images/главная/u108.png"/>
+              </div>
+            </div>
+
+            <!-- organization (Dynamic Panel) -->
+            <div id="u131" class="ax_default" data-label="organization">
+              <div id="u131_state0" class="panel_state" data-label="State1" style="">
+                <div id="u131_state0_content" class="panel_state_content">
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u132" class="ax_default box_2">
+                    <div id="u132_div" class=""></div>
+                  </div>
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u133" class="ax_default label">
+                    <div id="u133_div" class=""></div>
+                    <div id="u133_text" class="text ">
+                      <p><span>ACME Industries Inc. — John H. Doe</span></p>
+                    </div>
+                  </div>
+
+                  <!-- Unnamed (Shape) -->
+                  <div id="u134" class="ax_default icon">
+                    <img id="u134_img" class="img " src="images/главная/u108.png"/>
+                  </div>
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u135" class="ax_default box_1">
+                    <img id="u135_img" class="img " src="images/главная/u135.png"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- progressbar (Dynamic Panel) -->
+            <div id="u136" class="ax_default ax_default_hidden" data-label="progressbar" style="display:none; visibility: hidden">
+              <div id="u136_state0" class="panel_state" data-label="State1" style="">
+                <div id="u136_state0_content" class="panel_state_content">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- leftmenu (Dynamic Panel) -->
+      <div id="u137" class="ax_default" data-label="leftmenu">
+        <div id="u137_state0" class="panel_state" data-label="opened" style="">
+          <div id="u137_state0_content" class="panel_state_content">
+
+            <!-- acc3 (Dynamic Panel) -->
+            <div id="u138" class="ax_default" data-label="acc3">
+              <div id="u138_state0" class="panel_state" data-label="State1" style="">
+                <div id="u138_state0_content" class="panel_state_content">
+
+                  <!-- bg (Rectangle) -->
+                  <div id="u139" class="ax_default box_2" data-label="bg">
+                    <div id="u139_div" class=""></div>
+                  </div>
+
+                  <!-- Unnamed (Shape) -->
+                  <div id="u140" class="ax_default icon">
+                    <img id="u140_img" class="img " src="images/главная/u140.png"/>
+                  </div>
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u141" class="ax_default menu_label_1">
+                    <div id="u141_div" class=""></div>
+                    <div id="u141_text" class="text ">
+                      <p><span>Accounts and statements</span></p>
+                    </div>
+                  </div>
+
+                  <!-- Unnamed (Shape) -->
+                  <div id="u142" class="ax_default icon">
+                    <img id="u142_img" class="img " src="images/главная/u142.png"/>
+                  </div>
+                </div>
+              </div>
+              <div id="u138_state1" class="panel_state" data-label="State2" style="visibility: hidden;">
+                <div id="u138_state1_content" class="panel_state_content">
+
+                  <!-- bg (Rectangle) -->
+                  <div id="u143" class="ax_default box_2" data-label="bg">
+                    <img id="u143_img" class="img " src="images/главная/bg_u143.png"/>
+                  </div>
+
+                  <!-- Unnamed (Shape) -->
+                  <div id="u144" class="ax_default icon">
+                    <img id="u144_img" class="img " src="images/главная/u140.png"/>
+                  </div>
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u145" class="ax_default menu_label_1">
+                    <div id="u145_div" class=""></div>
+                    <div id="u145_text" class="text ">
+                      <p><span>Accounts and statements</span></p>
+                    </div>
+                  </div>
+
+                  <!-- Unnamed (Shape) -->
+                  <div id="u146" class="ax_default icon">
+                    <img id="u146_img" class="img " src="images/главная/u142.png"/>
+                  </div>
+
+                  <!-- bg1 (Rectangle) -->
+                  <div id="u147" class="ax_default menu_label_2" data-label="bg1">
+                    <div id="u147_div" class=""></div>
+                    <div id="u147_text" class="text ">
+                      <p><span>Accounts</span></p>
+                    </div>
+                  </div>
+
+                  <!-- bg2 (Rectangle) -->
+                  <div id="u148" class="ax_default menu_label_2" data-label="bg2">
+                    <div id="u148_div" class=""></div>
+                    <div id="u148_text" class="text ">
+                      <p><span>Account transations</span></p>
+                    </div>
+                  </div>
+
+                  <!-- bg3 (Rectangle) -->
+                  <div id="u149" class="ax_default menu_label_2" data-label="bg3">
+                    <div id="u149_div" class=""></div>
+                    <div id="u149_text" class="text ">
+                      <p><span>Statements</span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- acc4 (Dynamic Panel) -->
+            <div id="u150" class="ax_default" data-label="acc4">
+              <div id="u150_state0" class="panel_state" data-label="State1" style="">
+                <div id="u150_state0_content" class="panel_state_content">
+
+                  <!-- bg (Rectangle) -->
+                  <div id="u151" class="ax_default box_2" data-label="bg">
+                    <div id="u151_div" class=""></div>
+                  </div>
+
+                  <!-- Unnamed (Shape) -->
+                  <div id="u152" class="ax_default icon">
+                    <img id="u152_img" class="img " src="images/главная/u152.png"/>
+                  </div>
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u153" class="ax_default menu_label_1">
+                    <div id="u153_div" class=""></div>
+                    <div id="u153_text" class="text ">
+                      <p><span>Rubble payments</span></p>
+                    </div>
+                  </div>
+
+                  <!-- Unnamed (Shape) -->
+                  <div id="u154" class="ax_default icon">
+                    <img id="u154_img" class="img " src="images/главная/u142.png"/>
+                  </div>
+                </div>
+              </div>
+              <div id="u150_state1" class="panel_state" data-label="State2" style="visibility: hidden;">
+                <div id="u150_state1_content" class="panel_state_content">
+
+                  <!-- bg (Rectangle) -->
+                  <div id="u155" class="ax_default box_2" data-label="bg">
+                    <img id="u155_img" class="img " src="images/главная/bg_u155.png"/>
+                  </div>
+
+                  <!-- Unnamed (Shape) -->
+                  <div id="u156" class="ax_default icon">
+                    <img id="u156_img" class="img " src="images/главная/u152.png"/>
+                  </div>
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u157" class="ax_default menu_label_1">
+                    <div id="u157_div" class=""></div>
+                    <div id="u157_text" class="text ">
+                      <p><span>Rubble payments</span></p>
+                    </div>
+                  </div>
+
+                  <!-- Unnamed (Shape) -->
+                  <div id="u158" class="ax_default icon">
+                    <img id="u158_img" class="img " src="images/главная/u142.png"/>
+                  </div>
+
+                  <!-- bg1 (Rectangle) -->
+                  <div id="u159" class="ax_default menu_label_2" data-label="bg1">
+                    <div id="u159_div" class=""></div>
+                    <div id="u159_text" class="text ">
+                      <p><span>Payment orders</span></p>
+                    </div>
+                  </div>
+
+                  <!-- bg2 (Rectangle) -->
+                  <div id="u160" class="ax_default menu_label_2" data-label="bg2">
+                    <div id="u160_div" class=""></div>
+                    <div id="u160_text" class="text ">
+                      <p><span>Templates</span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- acc5 (Dynamic Panel) -->
+            <div id="u161" class="ax_default" data-label="acc5">
+              <div id="u161_state0" class="panel_state" data-label="State1" style="">
+                <div id="u161_state0_content" class="panel_state_content">
+
+                  <!-- bg (Rectangle) -->
+                  <div id="u162" class="ax_default box_2" data-label="bg">
+                    <div id="u162_div" class=""></div>
+                  </div>
+
+                  <!-- Unnamed (Shape) -->
+                  <div id="u163" class="ax_default icon">
+                    <img id="u163_img" class="img " src="images/главная/u163.png"/>
+                  </div>
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u164" class="ax_default menu_label_1">
+                    <div id="u164_div" class=""></div>
+                    <div id="u164_text" class="text ">
+                      <p><span>Salary contract</span></p>
+                    </div>
+                  </div>
+
+                  <!-- Unnamed (Shape) -->
+                  <div id="u165" class="ax_default icon">
+                    <img id="u165_img" class="img " src="images/главная/u142.png"/>
+                  </div>
+                </div>
+              </div>
+              <div id="u161_state1" class="panel_state" data-label="State2" style="visibility: hidden;">
+                <div id="u161_state1_content" class="panel_state_content">
+
+                  <!-- bg (Rectangle) -->
+                  <div id="u166" class="ax_default box_2" data-label="bg">
+                    <img id="u166_img" class="img " src="images/главная/bg_u166.png"/>
+                  </div>
+
+                  <!-- Unnamed (Shape) -->
+                  <div id="u167" class="ax_default icon">
+                    <img id="u167_img" class="img " src="images/главная/u163.png"/>
+                  </div>
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u168" class="ax_default menu_label_1">
+                    <div id="u168_div" class=""></div>
+                    <div id="u168_text" class="text ">
+                      <p><span>Salary contract</span></p>
+                    </div>
+                  </div>
+
+                  <!-- Unnamed (Shape) -->
+                  <div id="u169" class="ax_default icon">
+                    <img id="u169_img" class="img " src="images/главная/u142.png"/>
+                  </div>
+
+                  <!-- bg1 (Rectangle) -->
+                  <div id="u170" class="ax_default menu_label_2" data-label="bg1">
+                    <div id="u170_div" class=""></div>
+                    <div id="u170_text" class="text ">
+                      <p><span>Payrolls</span></p>
+                    </div>
+                  </div>
+
+                  <!-- bg2 (Rectangle) -->
+                  <div id="u171" class="ax_default menu_label_2" data-label="bg2">
+                    <div id="u171_div" class=""></div>
+                    <div id="u171_text" class="text ">
+                      <p><span>Salary contract application</span></p>
+                    </div>
+                  </div>
+
+                  <!-- bg3 (Rectangle) -->
+                  <div id="u172" class="ax_default menu_label_2" data-label="bg3">
+                    <div id="u172_div" class=""></div>
+                    <div id="u172_text" class="text ">
+                      <p> </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- acc6 (Dynamic Panel) -->
+            <div id="u173" class="ax_default" data-label="acc6">
+              <div id="u173_state0" class="panel_state" data-label="State1" style="">
+                <div id="u173_state0_content" class="panel_state_content">
+
+                  <!-- bg (Rectangle) -->
+                  <div id="u174" class="ax_default box_2" data-label="bg">
+                    <div id="u174_div" class=""></div>
+                  </div>
+
+                  <!-- Unnamed (Shape) -->
+                  <div id="u175" class="ax_default icon">
+                    <img id="u175_img" class="img " src="images/главная/u175.png"/>
+                  </div>
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u176" class="ax_default menu_label_1">
+                    <div id="u176_div" class=""></div>
+                    <div id="u176_text" class="text ">
+                      <p><span>Contractors</span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- acc7 (Dynamic Panel) -->
+            <div id="u177" class="ax_default" data-label="acc7">
+              <div id="u177_state0" class="panel_state" data-label="State1" style="">
+                <div id="u177_state0_content" class="panel_state_content">
+
+                  <!-- bg (Rectangle) -->
+                  <div id="u178" class="ax_default box_2" data-label="bg">
+                    <div id="u178_div" class=""></div>
+                  </div>
+
+                  <!-- Unnamed (Shape) -->
+                  <div id="u179" class="ax_default icon">
+                    <img id="u179_img" class="img " src="images/главная/u179.png"/>
+                  </div>
+
+                  <!-- Unnamed (Rectangle) -->
+                  <div id="u180" class="ax_default menu_label_1">
+                    <div id="u180_div" class=""></div>
+                    <div id="u180_text" class="text ">
+                      <p><span>Registry</span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- acc8 (Dynamic Panel) -->
+      <div id="u181" class="ax_default" data-label="acc8">
+        <div id="u181_state0" class="panel_state" data-label="State1" style="">
+          <div id="u181_state0_content" class="panel_state_content">
+
+            <!-- bg (Rectangle) -->
+            <div id="u182" class="ax_default box_2" data-label="bg">
+              <div id="u182_div" class=""></div>
+            </div>
+
+            <!-- Unnamed (Shape) -->
+            <div id="u183" class="ax_default icon">
+              <img id="u183_img" class="img " src="images/главная/u183.png"/>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u184" class="ax_default menu_label_1">
+              <div id="u184_div" class=""></div>
+              <div id="u184_text" class="text ">
+                <p><span>Settings</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u185" class="ax_default box_2">
+              <img id="u185_img" class="img " src="images/главная/u185.png"/>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- acc1 (Dynamic Panel) -->
+      <div id="u186" class="ax_default" data-label="acc1">
+        <div id="u186_state0" class="panel_state" data-label="State1" style="">
+          <div id="u186_state0_content" class="panel_state_content">
+
+            <!-- bg (Rectangle) -->
+            <div id="u187" class="ax_default box_2" data-label="bg">
+              <div id="u187_div" class=""></div>
+            </div>
+
+            <!-- Unnamed (SVG) -->
+            <div id="u188" class="ax_default image">
+              <img id="u188_img" class="img " src="images/главная/u188.svg"/>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u189" class="ax_default menu_label_1">
+              <div id="u189_div" class=""></div>
+              <div id="u189_text" class="text ">
+                <p><span>Dashboard</span></p>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u190" class="ax_default box_2 ax_default_hidden" style="display:none; visibility: hidden">
+              <img id="u190_img" class="img " src="images/главная/u190.png"/>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- shadow (Dynamic Panel) -->
+      <div id="u191" class="ax_default" data-label="shadow">
+        <div id="u191_state0" class="panel_state" data-label="State1" style="">
+          <div id="u191_state0_content" class="panel_state_content">
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u192" class="ax_default box_2">
+              <img id="u192_img" class="img " src="images/главная/u192.png"/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
