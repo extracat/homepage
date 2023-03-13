@@ -1,25 +1,11 @@
 @font-face{
   font-family: 'mplus-2m-bold';
-  src: url('fonts/mplus-2m-bold.eot');
-  src: url('fonts/mplus-2m-bold.eot%3F') format('embedded-opentype'),
-       url('fonts/mplus-2m-bold.woff') format('woff'),
-       url('fonts/mplus-2m-bold.ttf') format('truetype');
+  src: url('http://mplus-webfonts.sourceforge.jp/mplus-2m-bold.eot');
+  src: url('http://mplus-webfonts.sourceforge.jp/mplus-2m-bold.eotmplus-2m-bold.eot%3F') format('embedded-opentype'),
+       url('http://mplus-webfonts.sourceforge.jp/mplus-2m-bold.eotmplus-2m-bold.woff') format('woff'),
+       url('http://mplus-webfonts.sourceforge.jp/mplus-2m-bold.eotmplus-2m-bold.ttf') format('truetype');
 }
-@font-face {
-    font-family: "Raleway";
-    src: url("fonts/RalewayMedium.eot");
-    src: url("fonts/RalewayMedium.eot%3F")format("embedded-opentype"),
-    url("fonts/RalewayMedium.woff") format("woff"),
-    url("fonts/RalewayMedium.ttf") format("truetype");
-    font-style: normal;
-    font-weight: normal;
-}
-@font-face {
-    font-family: "Raleway";
-    src: url("fonts/RalewayExtraBold.eot");
-    src: url("fonts/RalewayExtraBold.eot%3F")format("embedded-opentype"),
-    url("fonts/RalewayExtraBold.woff") format("woff"),
-    url("fonts/RalewayExtraBold.ttf") format("truetype");
-    font-weight: 800;
-    font-style: normal;
-}
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500;800&display=swap');
+
+
