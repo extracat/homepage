@@ -1,9 +1,9 @@
 @font-face{
   font-family: 'mplus-2m-bold';
-  src: url('http://mplus-webfonts.sourceforge.jp/mplus-2m-bold.eot');
-  src: url('http://mplus-webfonts.sourceforge.jp/mplus-2m-bold.eotmplus-2m-bold.eot%3F') format('embedded-opentype'),
-       url('http://mplus-webfonts.sourceforge.jp/mplus-2m-bold.eotmplus-2m-bold.woff') format('woff'),
-       url('http://mplus-webfonts.sourceforge.jp/mplus-2m-bold.eotmplus-2m-bold.ttf') format('truetype');
+  src: url('https://mplus-webfonts.sourceforge.jp/mplus-2m-bold.eot');
+  src: url('https://mplus-webfonts.sourceforge.jp/mplus-2m-bold.eot') format('embedded-opentype'),
+       url('https://mplus-webfonts.sourceforge.jp/mplus-2m-bold.woff') format('woff'),
+       url('https://mplus-webfonts.sourceforge.jp/mplus-2m-bold.ttf') format('truetype');
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500;800&display=swap');
