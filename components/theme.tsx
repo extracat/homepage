@@ -1,10 +1,12 @@
+import { getAbsoluteUrl } from '../utils/vercel-utils'
 import type { NextraThemeLayoutProps } from 'nextra';
 import React from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
 import { Header } from './header';
 import { Footer } from './footer';
-import { Cards } from './cards';
+
+const absoluteUrl = getAbsoluteUrl();
 
 export default function Layout({ children, pageOpts }: NextraThemeLayoutProps) {
   const {
@@ -15,7 +17,6 @@ export default function Layout({ children, pageOpts }: NextraThemeLayoutProps) {
     route
   } = pageOpts
  
-
   const htmlHead = (
     <Head>
       <title>{title}</title>
@@ -26,7 +27,7 @@ export default function Layout({ children, pageOpts }: NextraThemeLayoutProps) {
       <meta property="og:image" content={frontMatter.image} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@5n32h1" />
-      <meta name="twitter:image" content={frontMatter.image} />
+      <meta name="twitter:image" content={absoluteUrl + frontMatter.image} />
       <meta name="twitter:description" content={frontMatter.description} />
     </Head>
   );
@@ -82,4 +83,4 @@ export default function Layout({ children, pageOpts }: NextraThemeLayoutProps) {
 
       </div>
     )
-  }
+}
