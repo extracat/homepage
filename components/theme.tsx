@@ -26,6 +26,8 @@ export default function Layout({ children, pageOpts }: NextraThemeLayoutProps) {
       <meta property="og:image" content={frontMatter.image} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@5n32h1" />
+      <meta name="twitter:image" content={frontMatter.image} />
+      <meta name="twitter:description" content={frontMatter.description} />
     </Head>
   );
 
@@ -49,26 +51,28 @@ export default function Layout({ children, pageOpts }: NextraThemeLayoutProps) {
 
       <main className="main">
             <div className="main-content">
+              <article>
 
-              {/*
-              <div>
-                Table of Contents:
-                <ul>
-                  {headings.map((heading) => (
-                    <li key={heading.value}>{heading.value}</li>
-                  ))}
-                </ul>
-              </div>
-              */}
+                {/*
+                <div>
+                  Table of Contents:
+                  <ul>
+                    {headings.map((heading) => (
+                      <li key={heading.value}>{heading.value}</li>
+                    ))}
+                  </ul>
+                </div>
+                */}
 
-              {children}
+                {children}
 
-              {// This renders only on the specified route
-              <ConditionalWrapper condition={route == "/"}>
-                <div></div>
-              </ConditionalWrapper>
-              }
+                {// This renders only on the specified route
+                <ConditionalWrapper condition={route == "/"}>
+                  <div></div>
+                </ConditionalWrapper>
+                }
 
+              </article>
             </div>
         </main>
 
