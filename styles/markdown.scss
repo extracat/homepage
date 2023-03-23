@@ -1,0 +1,12 @@
+@import 'settings.scss';
+
+.main-content {
+  img, video {
+    border-style: none;
+    box-sizing: content-box;
+    max-width: calc(100% + 2rem);
+    height: auto;
+    margin-left: -1rem;
+    margin-right: -1rem;
+  }
+}

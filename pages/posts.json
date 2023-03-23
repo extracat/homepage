@@ -1,0 +1,18 @@
+{
+  "posts": [
+    {
+      "slug": "/sberpro",
+      "img": "",
+      "title": "SberPro desktop app redesign",
+      "company": "Sber",
+      "excerpt": "Offline client app for enterprises, clients of SberBank."
+    },
+    {
+      "slug": "/static/timetracker/index.html",
+      "img": "",
+      "title": "TimeTracker iOS app",
+      "company": "HSE Art And Design School",
+      "excerpt": "The app for HSE Art And Design School students and teachers."
+    }
+  ]
+}

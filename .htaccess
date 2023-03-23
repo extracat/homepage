@@ -1,9 +1,0 @@
-AddDefaultCharset UTF-8
-
-RewriteEngine on
-
-RewriteCond %{HTTP:Accept-Language} ^ru [NC]
-RewriteRule index.php index-ru.html [L]
-
-RewriteCond %{HTTP:Accept-Language} ^en [NC]
-RewriteRule index.php index.html [L]

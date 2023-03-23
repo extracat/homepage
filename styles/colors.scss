@@ -1,0 +1,122 @@
+@import 'settings.scss';
+
+@mixin color-scheme (
+    $var-text-base,
+    $var-text-link,  
+    $var-text-link-hover,
+    $var-layout-bg,
+    $var-layout-border,
+    $var-layout-card-backgroud,
+    $var-layout-card-ative-backgroud,
+    $var-text-card-active
+  ) {
+    color: $var-text-base;
+    background: $var-layout-bg;
+
+    transition: 
+        color $global-transition-time ease,
+        background-color $global-transition-time ease;
+
+    body {
+      color: $var-text-base;
+      background: $var-layout-bg;
+    }
+    a {
+      color: $var-text-link;
+      transition: color $global-transition-time ease;
+    }
+    
+    a:hover {
+      color: $var-text-link-hover;
+      transition: color $global-transition-time ease;
+    }
+
+    .card,
+    .footer, 
+    .header {
+      border-color: $var-layout-border;
+    }
+
+    .card {
+      background-color: $var-layout-card-backgroud;
+      transition: 
+        border-color $global-transition-time ease,
+        background-color $global-transition-time ease;
+    }
+
+    .card:hover {
+      border-color: $var-text-card-active;
+      background-color: $var-layout-card-ative-backgroud;
+      transition: 
+        border-color $global-transition-time ease,
+        background-color $global-transition-time ease;
+    }
+
+    .card:hover .text {color: $var-text-link;}
+
+    .logo {
+      a:hover {
+        color: inherit;
+      }
+    }
+}
+
+
+html,
+body {
+    color: $color-text-base;
+    background-color: $color-layout-bg;
+    transition: 
+      color $global-transition-time ease,
+      background-color $global-transition-time ease;
+}
+
+html, html.light-mode {
+  color-scheme: light;
+  @include color-scheme (
+    $color-text-base, 
+    $color-text-link,
+    $color-text-link-hover,
+    $color-layout-bg,
+    $color-layout-border,
+    $color-layout-card-backgroud,
+    $color-layout-card-ative-backgroud,
+    $color-text-card-active
+  );
+}
+
+
+@if $dark-mode-switch {
+  html.dark-mode {
+    color-scheme: dark;
+    @include color-scheme (
+      $color-darkmode-text-base,
+      $color-darkmode-text-link,
+      $color-darkmode-text-link-hover,
+      $color-darkmode-layout-bg,
+      $color-darkmode-layout-border,
+      $color-darkmode-layout-card-backgroud,
+      $color-darkmode-layout-card-ative-backgroud,
+      $color-darkmode-text-card-active
+    );
+  }
+}
+
+
+@if $dark-mode-auto {
+  @media (prefers-color-scheme: dark) {
+    html {
+      color-scheme: dark;
+      @include color-scheme (
+        $color-darkmode-text-base,
+        $color-darkmode-text-link,
+        $color-darkmode-text-link-hover,
+        $color-darkmode-layout-bg,
+        $color-darkmode-layout-border,
+        $color-darkmode-layout-card-backgroud,
+        $color-darkmode-layout-card-ative-backgroud,
+        $color-darkmode-text-card-active
+      );
+    }
+  }
+}

@@ -1,0 +1,64 @@
+@import 'settings.scss';
+
+html, body {
+  font-family: 'JetBrains Mono', 
+  "Fira Mono", "Ubuntu Monospace", "Source Code Pro",
+  "Cascadia Mono", "Segoe UI Mono", "Roboto Mono",
+  SFMono-Regular, Menlo, Monaco, monospace;
+}
+
+.korean {
+  font-family: 'Nanum Gothic', 'JetBrains Mono', sans-serif;
+}
+
+
+html, body {
+  font-size: calc(0.5vw + 16px);
+  line-height: 1.5em;
+}
+
+
+@media (min-width: $content-max-width) {
+  html, body {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  html, body {
+    _font-size: 16px;
+  }
+}
+
+p {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 1.7rem;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2.1rem;
+  line-height: 1.3em;
+  font-weight: 400;
+}
+h2 {
+  font-size: 1.5rem;
+  line-height: 1.4em;
+}
+h3 {
+  font-size: 1.2rem;
+  line-height: 1.5em;
+}
+h4, h5, h6 {
+  font-size: 1.05rem;
+  line-height: 1.5em;
+}
+
+big {
+  font-size: 1.4em;
+  line-height: 1.4em;
+}

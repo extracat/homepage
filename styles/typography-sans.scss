@@ -1,0 +1,97 @@
+@import 'settings.scss';
+
+html, body {
+  font-family: 'Golos Text', sans-serif;
+}
+
+b, strong {
+  font-weight: 600;
+}
+
+.korean {
+  font-family: 'Nanum Gothic', 'JetBrains Mono', sans-serif;
+}
+
+
+html, body {
+  font-size: calc(0.5vw + 15px);
+  line-height: 1.6em;
+}
+
+
+@media (min-width: $content-max-width) {
+  html, body {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  html, body {
+    _font-size: 16px;
+  }
+}
+
+p {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Overpass', sans-serif;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 3.0rem;
+  line-height: 1.2em;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 1.8rem;
+  line-height: 1.4em;
+}
+h3 {
+  font-size: 1.2rem;
+  line-height: 1.5em;
+}
+h4, h5, h6 {
+  font-size: 1.05rem;
+  line-height: 1.5em;
+}
+
+big {
+  font-size: 1.4rem;
+  line-height: 1.5em;
+}
+
+
+@mixin darkmode-typography {
+  h1 {
+    font-weight: 500;
+    //font-weight: 400;
+    //letter-spacing: 0.007em;
+  }
+}
+
+@mixin lightmode-typography {
+  h1 {
+    font-weight: 500;
+    letter-spacing:normal;
+  }
+}
+
+html.light-mode {
+  @include lightmode-typography;
+}
+
+html.dark-mode {
+  @include darkmode-typography;
+}
+
+@if $dark-mode-auto {
+  @media (prefers-color-scheme: dark) {
+    @include darkmode-typography;
+  }
+}

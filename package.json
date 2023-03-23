@@ -1,16 +1,25 @@
 {
-  "name": "extracat",
-  "version": "1.0.0",
-  "description": "Simple hello world Node.js app",
-  "license": "Apache-2.0",
+  "name": "homepage",
+  "version": "0.0.3",
+  "description": "homepage",
+  "private": true,
+  "author": "Extracat",
+  "license": "MIT",
+  "packageManager": "yarn@3.4.1",
   "scripts": {
-    "start": "node app.js"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
   "dependencies": {
-    "cfenv": "^1.1.0"
+    "next": "^13.2.4",
+    "nextra": "^2.2.19",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
-  "engines": {
-    "node": ">=0.10.0"
-  },
-  "repository": {}
+  "devDependencies": {
+    "cookies-next": "^2.1.1",
+    "react-icons": "^4.8.0",
+    "sass": "^1.59.2"
+  }
 }
