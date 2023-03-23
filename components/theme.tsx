@@ -24,10 +24,10 @@ export default function Layout({ children, pageOpts }: NextraThemeLayoutProps) {
       <meta property="og:title" content={title} />
       <meta property="og:site_name" content="Anton Basistov — Product Designer" />
       <meta property="og:description" content={frontMatter.description} />
-      <meta property="og:image" content={absoluteUrl + frontMatter.image} />
+      <meta property="og:image" content={frontMatter.image} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@5n32h1" />
-      <meta name="twitter:image" content={absoluteUrl + frontMatter.image} />
+      <meta name="twitter:image" content={absoluteUrl + frontMatter.image}></meta>
       <meta name="twitter:description" content={frontMatter.description} />
     </Head>
   );
