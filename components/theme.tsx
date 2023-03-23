@@ -19,13 +19,13 @@ export default function Layout({ children, pageOpts }: NextraThemeLayoutProps) {
   const htmlHead = (
     <Head>
       <title>{title}</title>
-      <meta name="description" content="description" />
+      <meta name="description" content="Anton Basistov, a product designer specialized in professional aimed fintech products." />
       <meta property="og:title" content={title} />
-      <meta property="og:site_name" content="Extracat blog" />
+      <meta property="og:site_name" content="Anton Basistov - Product Designer" />
       <meta property="og:description" content={frontMatter.description} />
+      <meta property="og:image" content={frontMatter.image} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@5n32h1" />
-      <meta property="og:image" content={frontMatter.image} />
     </Head>
   );
 
