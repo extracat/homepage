@@ -1,6 +1,8 @@
 import Link from 'next/link';
-import { FaLinkedinIn, FaTwitter } from "react-icons/fa";
+import { FaLinkedinIn, FaTwitter, FaBehance } from "react-icons/fa";
 import { HiMail } from "react-icons/hi";
+import { TbBrandDribbble } from "react-icons/tb";
+
 
 
 export function Footer() {
@@ -25,9 +27,22 @@ export function Footer() {
             </div>
             <div className='col align-right menu-icon'>
               <a href="https://linkedin.com/in/basistov/" title="Hire Me" target="_blank" rel="noopener noreferrer">
-                <FaLinkedinIn className='react-icon ' />
+                <FaLinkedinIn className='react-icon linkedin-icon' />
               </a>
             </div>
+
+            <div className='col align-right menu-icon'>
+              <a href="https://dribbble.com/basistov" title="Dribbble" target="_blank" rel="noopener noreferrer">
+                <TbBrandDribbble className='react-icon dribbble-icon'/>
+              </a>
+            </div>
+
+            <div className='col align-right menu-icon'>
+              <a href="https://www.behance.net/basistov" title="Behance" target="_blank" rel="noopener noreferrer">
+                <FaBehance className='react-icon behance-icon'/>
+              </a>
+            </div>
+
           </div>
         </div>
       </div>
