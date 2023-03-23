@@ -27,7 +27,6 @@ export default function Layout({ children, pageOpts }: NextraThemeLayoutProps) {
       <meta property="og:image" content={absoluteUrl + frontMatter.image} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@5n32h1" />
-      <meta name="twitter:image" content={absoluteUrl + frontMatter.image} />
       <meta name="twitter:description" content={frontMatter.description} />
     </Head>
   );
