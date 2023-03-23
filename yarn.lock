@@ -1064,7 +1064,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fsevents@npm:~2.3.2":
+"fsevents@npm:^2.3.2, fsevents@npm:~2.3.2":
   version: 2.3.2
   resolution: "fsevents@npm:2.3.2"
   dependencies:
@@ -1074,7 +1074,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fsevents@patch:fsevents@~2.3.2#~builtin<compat/fsevents>":
+"fsevents@patch:fsevents@^2.3.2#~builtin<compat/fsevents>, fsevents@patch:fsevents@~2.3.2#~builtin<compat/fsevents>":
   version: 2.3.2
   resolution: "fsevents@patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=df0bf1"
   dependencies:
@@ -1288,6 +1288,7 @@ __metadata:
   dependencies:
     cookies-next: ^2.1.1
     next: ^13.2.4
+    nextjs-google-analytics: ^2.3.3
     nextra: ^2.2.19
     react: ^18.2.0
     react-dom: ^18.2.0
@@ -2617,6 +2618,21 @@ __metadata:
   bin:
     next: dist/bin/next
   checksum: 8531dee41b60181b582f5ee80858907b102f083ef8808ff9352d589dd39e6b3a96f7a11b3776a03eef3a28430cff768336fa2e3ff2c6f8fcd699fbc891749051
+  languageName: node
+  linkType: hard
+
+"nextjs-google-analytics@npm:^2.3.3":
+  version: 2.3.3
+  resolution: "nextjs-google-analytics@npm:2.3.3"
+  dependencies:
+    fsevents: ^2.3.2
+  peerDependencies:
+    next: ">=11.0.0"
+    react: ">=17.0.0"
+  dependenciesMeta:
+    fsevents:
+      optional: true
+  checksum: 5474b9c314d41a3a95574895c62c6039da482035dcf6cee08161ad043e5da5ca0f5a4c5be2e7ffea9cee8148a422ae1332874abc1f0201f30874641ab733d74a
   languageName: node
   linkType: hard
 

@@ -1,3 +1,4 @@
+import { GoogleAnalytics } from "nextjs-google-analytics";
 import '../styles/defaults.scss'
 import '../styles/layout.scss'
 import '../styles/typography-sans.scss'
@@ -15,7 +16,12 @@ const components = {
 }
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} components={components} />
+  return (
+    <>
+      <GoogleAnalytics gaMeasurementId="G-LG3PLEN3EH" trackPageViews />
+      <Component {...pageProps} components={components} />
+    </>
+  );
 }
 
 export default MyApp
