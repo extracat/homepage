@@ -11,7 +11,7 @@ export function Header() {
           </div>
           <div className='col align-right top-menu'>
             <div className='align-center menu-item'>
-              <Link href="/">Work</Link>  
+              <Link href="/#work">Work</Link>  
             </div>
 
             <div className='align-center menu-item'>

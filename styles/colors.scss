@@ -2,6 +2,7 @@
 
 @mixin color-scheme (
     $var-text-base,
+    $var-text-strong,
     $var-text-link,  
     $var-text-link-hover,
     $var-layout-bg,
@@ -65,6 +66,11 @@
         color: $var-text-link-hover;
       }
     }
+    
+    h1, h2, h3, h4, h5, h6, strong, b, a {
+    color: $var-text-strong;
+    }
+    
 }
 
 
@@ -81,6 +87,7 @@ html, html.light-mode {
   color-scheme: light;
   @include color-scheme (
     $color-text-base, 
+    $color-text-strong,
     $color-text-link,
     $color-text-link-hover,
     $color-layout-bg,
@@ -97,6 +104,7 @@ html, html.light-mode {
     color-scheme: dark;
     @include color-scheme (
       $color-darkmode-text-base,
+      $color-darkmode-text-strong,
       $color-darkmode-text-link,
       $color-darkmode-text-link-hover,
       $color-darkmode-layout-bg,
@@ -115,6 +123,7 @@ html, html.light-mode {
       color-scheme: dark;
       @include color-scheme (
         $color-darkmode-text-base,
+        $color-darkmode-text-strong,
         $color-darkmode-text-link,
         $color-darkmode-text-link-hover,
         $color-darkmode-layout-bg,

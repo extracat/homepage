@@ -2,6 +2,9 @@
 
 html, body {
   font-family: 'Golos Text', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 0.01em;
 }
 
 b, strong {
@@ -64,6 +67,7 @@ ul {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Overpass', sans-serif;
+  letter-spacing: normal;
   margin-top: 1.5rem;
   margin-bottom: 0.3rem;
 }
@@ -81,7 +85,7 @@ h2 {
   line-height: 1.4em;
 }
 h3 {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   line-height: 1.5em;
 }
 h4, h5, h6 {
