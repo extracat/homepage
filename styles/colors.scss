@@ -59,6 +59,12 @@
         color: inherit;
       }
     }
+
+    ul {
+      ::marker {
+        color: $var-text-link-hover;
+      }
+    }
 }
 
 

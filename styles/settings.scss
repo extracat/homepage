@@ -1,5 +1,8 @@
-$content-max-width: 1000px;
+// Global layout vars
 $mobile-width: 600px;
+$content-max-width: 1000px;  
+$content-padding: 2rem; // Left and right padding
+
 
 // Enables dark mode switching 
 $dark-mode-switch: true;

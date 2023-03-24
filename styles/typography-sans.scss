@@ -31,24 +31,44 @@ html, body {
   }
 }
 
-p {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+p, ul {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+ul {
+  padding-left: 1.5rem;
+  li {
+    padding-left: 0.7rem;
+    padding-bottom: 0.5rem;
+  }
+  ::marker {
+    content: '―';
+    font-size: 1.1rem;
+  }
+  p {
+    padding: 0;
+    margin-top: 0.5rem;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Overpass', sans-serif;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.3rem;
 }
 
 h1 {
+  margin-top: 2rem;
   font-size: 3.0rem;
   line-height: 1.2em;
   font-weight: 500;
 }
 
 h2 {
+  margin-top: 2rem;
   font-size: 1.8rem;
   line-height: 1.4em;
 }

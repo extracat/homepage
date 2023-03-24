@@ -1,12 +1,76 @@
 @import 'settings.scss';
 
+hr {
+  margin-top: 1.7rem;
+  margin-bottom: 1.5rem;
+  border: 0;
+  height: 1px;
+  background: repeating-linear-gradient(
+    to right,
+    rgba(153, 153, 153, 0.5) 0rem,
+    rgba(153, 153, 153, 0.5) 0.4rem,
+    transparent 0.4rem,
+    transparent 0.7rem
+  );
+  margin-left: calc(-1 * $content-padding / 2);
+  margin-right: calc(-1 * $content-padding / 2);
+}
+
 .main-content {
   img, video {
     border-style: none;
     box-sizing: content-box;
     max-width: calc(100% + 2rem);
     height: auto;
-    margin-left: -1rem;
-    margin-right: -1rem;
+    margin-left: calc(-1 * $content-padding / 2);
+    margin-right: calc(-1 * $content-padding / 2);
+  }
+  table {
+    border-collapse: collapse;
+    tr {
+      th, td {
+
+        margin: 0;
+        padding: 0.3rem;
+        text-align: left;
+        vertical-align: top;
+      }
+    }
+  }
+}
+
+.no-bleed {
+  img {
+    max-width: 100%;
+    height: auto;
+    margin-left: unset;
+    margin-right: unset;
+  }
+}
+
+.img-size-10rem {
+  img {
+    width: 10rem;
+  }
+}
+
+.round-border {
+  img {
+    border-radius: 0.5rem;
+  }
+}
+
+.no-margin {
+  margin-top: 0;
+  margin-bottom: 0;
+  &-top {
+    p, ul, h1, h2, h3, h4, h5, h6 {
+      margin-top: 0;
+    }
+  }
+  &-bottom {
+    p, ul, h1, h2, h3, h4, h5, h6 {
+      margin-bottom: 0;
+    }
   }
 }
