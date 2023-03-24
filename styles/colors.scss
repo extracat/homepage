@@ -61,7 +61,7 @@
     }
 
     ul {
-      ::marker {
+      li:before {
         color: $var-text-link-hover;
       }
     }

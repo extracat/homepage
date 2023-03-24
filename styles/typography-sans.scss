@@ -41,13 +41,16 @@ p, ul {
 ul {
   padding-left: 1.5rem;
   li {
-    padding-left: 0.7rem;
+    padding-left: 0.5rem;
     padding-bottom: 0.5rem;
+    text-indent: -1.5rem;
+    list-style-type: none;
   }
-  ::marker {
-    content: '―';
-    font-size: 1.1rem;
-  }
+  li:before {
+      content: '―';
+      font-size: 1.1rem;
+      padding-right: 0.5rem;
+    }
   p {
     padding: 0;
     margin-top: 0.5rem;
