@@ -48,6 +48,13 @@ hr {
   }
 }
 
+img.no-bleed {
+    max-width: 100%;
+    height: auto;
+    margin-left: unset;
+    margin-right: unset;
+}
+
 .img-size-10rem {
   img {
     width: 10rem;
