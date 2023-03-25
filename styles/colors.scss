@@ -5,6 +5,7 @@
     $var-text-strong,
     $var-text-link,  
     $var-text-link-hover,
+    $var-accent,
     $var-layout-bg,
     $var-layout-border,
     $var-layout-card-backgroud,
@@ -72,7 +73,7 @@
 
     ul {
       li:before {
-        color: $var-text-link-hover;
+        color: $var-accent;
       }
     }
     
@@ -80,6 +81,19 @@
     color: $var-text-strong;
     }
     
+    aside {
+      border-color: $var-layout-border;
+      background-color: $var-layout-card-backgroud;
+      transition: 
+        border-color $global-transition-time ease,
+        background-color $global-transition-time ease;
+    }
+
+    blockquote {
+      border-color: $var-accent;
+      transition: 
+        border-color $global-transition-time ease;
+    }
 }
 
 
@@ -99,6 +113,7 @@ html, html.light-mode {
     $color-text-strong,
     $color-text-link,
     $color-text-link-hover,
+    $color-accent,
     $color-layout-bg,
     $color-layout-border,
     $color-layout-card-backgroud,
@@ -116,6 +131,7 @@ html, html.light-mode {
       $color-darkmode-text-strong,
       $color-darkmode-text-link,
       $color-darkmode-text-link-hover,
+      $color-darkmode-accent,
       $color-darkmode-layout-bg,
       $color-darkmode-layout-border,
       $color-darkmode-layout-card-backgroud,
@@ -135,6 +151,7 @@ html, html.light-mode {
         $color-darkmode-text-strong,
         $color-darkmode-text-link,
         $color-darkmode-text-link-hover,
+        $color-darkmode-accent,
         $color-darkmode-layout-bg,
         $color-darkmode-layout-border,
         $color-darkmode-layout-card-backgroud,

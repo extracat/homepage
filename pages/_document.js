@@ -12,6 +12,7 @@ export default function Document() {
         <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;500;700&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Overpass:ital@1&display=swap" rel="stylesheet" />
       </Head>
       <body>
         <script type="text/javascript" src='/noflash.js' />

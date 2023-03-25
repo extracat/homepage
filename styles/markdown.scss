@@ -81,3 +81,37 @@ img.no-bleed {
     }
   }
 }
+
+
+aside {
+  border: 1px solid;
+  padding: 0.4rem 1.5rem 0.5rem 1.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  line-height: 1.6em;
+  max-width: fit-content;
+  P{
+    padding: 0;
+    margin: 0.7rem 0;
+  }
+}
+
+aside.extra-margin {
+  margin-top: 1.5rem;
+}
+
+blockquote {
+  border-left: 0.15rem solid;
+  max-width: calc(100% + 2rem);
+  margin-left: 0.8rem;
+  padding-left: 1rem;
+  font-family: 'Overpass', sans-serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  P{
+    padding: 0;
+    margin: 1rem 0;
+  }
+}
