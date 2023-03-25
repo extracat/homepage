@@ -94,7 +94,6 @@ Yellow badges tell that some documents are updated. Bold font in the table shows
 Next I discovered the workflow of the user’s regular workday. At first documents are imported from the ERP to SberPro and checked for consistency.
 
 > The key difference between SberPro and any other internet bank client is that large enterprises have their document management in ERP systems and use bank client software as transport tool.
-> 
 
 After that, the package of documents is sent to the bank. After what sometimes takes up to several hours, the response data about the package and the bank statements arrives. The response data is checked for errors and the statements are exported back into ERP system.
 
@@ -139,10 +138,9 @@ Also I made widgets, which can aggregate information about the documents (status
 
 I got rid of the notifications about every single document, as well as of bold font in tables. Now the detailed information about every meaningful status is shown in widgets. Red color indicates the errors the user should deal with.
 
-> The key idea — users don't really need to know about all documents, which changed their status. Moreover, they don't need to know about every particular error. The most important information for users is if errors occur or not. If there aren't errors, users need to check if all payments have been processed. If there are errors, user used to select all incorrect documents and reimport them.
-> 
-
 ![new-app-widget.png](./img/new-app-widget.png)
+
+> The key idea — users don't really need to know about all documents, which changed their status. Moreover, they don't need to know about every particular error. The most important information for users is if errors occur or not. If there aren't errors, users need to check if all payments have been processed. If there are errors, user used to select all incorrect documents and reimport them.
 
 Here are two widgets — the left one for all documents’ types, and the right one for the particular documents’ table. These widgets are interactive. User can click any status and open the table with that particular documents filtered by that status, and then do any desired multiple action.
 
