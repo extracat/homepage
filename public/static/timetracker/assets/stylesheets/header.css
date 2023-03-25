@@ -15,7 +15,7 @@
 .mob-menu-list a.item, .menu-list a.item {
   color: #fff;
   text-decoration: none;
-  margin-right: 35px;
+  margin-right: 45px;
 }
 
 
@@ -38,7 +38,7 @@
 @media (max-width: 1024px){
     .menu-list, .mob-menu-list {
       letter-spacing: 1px;
-      font-size: 10px;
+      font-size: 14px;
     }
 
 }

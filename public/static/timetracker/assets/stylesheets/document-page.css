@@ -184,3 +184,7 @@
         line-height: 21px;
     }
 }
+
+.mobile-download img {
+    width: 250px;
+}
