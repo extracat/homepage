@@ -42,26 +42,45 @@ p, ul {
 }
 
 ul {
-  padding-left: 1.2rem;
+  padding-left: 1.5rem;
   li {
     padding-left: 0.5rem;
     padding-bottom: 0.5rem;
-    text-indent: -1.5rem;
+    text-indent: -1.65rem;
     list-style-type: none;
   }
   li:before {
       content: '―';
       font-size: 1.1rem;
-      padding-right: 0.5rem;
+      padding-right: 0.6rem;
     }
   p {
     padding: 0;
     margin-top: 0.5rem;
     text-indent: 0;
   }
-  li :first-child{
+  li :first-child {
     display: inline;
-    margin-left: -0.18rem;
+    margin-left: -0.15rem;
+  }
+  li {
+    ul { 
+      display: block !important;
+      padding-left: 1.6rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      padding-top: 0;
+      padding-bottom: 0;
+      li, li :first-child {
+        display: block !important;
+        text-indent: -1.75rem;
+        margin-left: -0.18rem;
+        margin-top: 1em;
+        margin-bottom: 1rem;
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+    }
   }
 }
 
