@@ -2,6 +2,8 @@
 
 html, body, div#__next{
   height:100%;
+  position: relative;
+  z-index: -2;
 }
 
 html {

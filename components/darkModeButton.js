@@ -33,7 +33,7 @@ export function DarkModeButton() {
       body.classList.add("dark-mode");
     }
     
-    console.log('cookie is', mode);
+    //console.log('cookie is', mode);
    }
 
   function toggleDarkMode() {
@@ -55,7 +55,7 @@ export function DarkModeButton() {
       mode = prefersMode;
     }
 
-    console.log('mode is', mode);
+    //console.log('mode is', mode);
 
     if (mode != 'dark') {
       html.classList.add("dark-mode");
