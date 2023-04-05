@@ -1,9 +1,29 @@
 @import 'settings.scss';
 
+// This is for canvas layer to be visible
+html, body {
+  position: sticky;  
+  z-index: -2;
+}
+
+canvas {
+  width: 20rem;
+  height: 10rem;
+}
+
+canvas.background-canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  z-index: -1;
+}
+
 html, body, div#__next{
   height:100%;
-  position: relative;
-  z-index: -2;
 }
 
 html {
