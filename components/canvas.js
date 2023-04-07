@@ -63,7 +63,7 @@ export function Canvas(props) {
     var w = getCanvasWidth(canvas)
     var h = getCanvasHeight(canvas)
     var mobile = false
-    if (w<600 || h<400) {
+    if ( w < 600 ) {
       mobile = true
     }
 
