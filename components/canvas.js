@@ -60,35 +60,54 @@ export function Canvas(props) {
     ////             BEGIN SETTINGS          ////
     /////////////////////////////////////////////
 
-    var w = getCanvasWidth(canvas);
-    var h = getCanvasHeight(canvas);
+    var w = getCanvasWidth(canvas)
+    var h = getCanvasHeight(canvas)
+    var mobile = false
+    if (w<600 || h<400) {
+      mobile = true
+    }
 
-    var x = 0;
-    var y = 0;
 
-    var mainColor = "#e0e0e0";
-    var colors = [mainColor];
+    var x = 0
+    var y = 0
+
+    var mainColor = "#ff6b51"
+    var colors = [mainColor,
+                  "#3DD2DC",
+                  "#7EDC52",
+                  "#527CE8",
+                  "#D66AC4", 
+                  "#FBB80D"]
+                  
+    var particleSize = 3
+    if (mobile) {particleSize = 2}
+
+    var lineWidth = 0.7
+
+    var frictionForce = 0.15          
+    var brownianForce = 0.01        
+    var attractorForce = 10
+
+    var blobSize = 15 // number of particles in blob
+    if (mobile) {blobSize = 13}
+
+    var boundingStrength = 0.3
+    var particleInteraction = 1
+    var blobInteraction = 1.7 
+    if (mobile) {blobInteraction = 3}
+
+    var blobVolume = 0.005
+    if (mobile) {blobVolume = 0.01}
 
     var attractor = {
       x: w / 2,
-      y: h / 2
+      y: h / 2,
+      i: 0
     }
 
-
-    var dots = [];
-
-    /*
-    while (dots.length < 10) {
-      dots.push(new Dot());
-    }
-    */
-
-    var lines = [];
-
-    let r=100
-    while (lines.length < 20) {
-      lines.push(new Line(w,0,r));
-      r+=15 + r/50
+    var blobs = []
+    for (var i = 0; i < 6; i++) {
+      blobs.push(new Blob(w/1.7,150+h/4,10));
     }
 
     /////////////////////////////////////////////
@@ -104,8 +123,11 @@ export function Canvas(props) {
     function mouseMove(e) {
         //attractor.x = e.offsetX == undefined ? e.layerX : e.offsetX;
         //attractor.y = e.offsetY == undefined ? e.layerY : e.offsetY;
-        attractor.x = e.layerX;
-        attractor.y = e.layerY;
+        var x = e.layerX
+        var y = e.layerY
+
+        attractor.x = x
+        attractor.y = y
     }
 
     window.addEventListener("mousemove", mouseMove);
@@ -115,40 +137,47 @@ export function Canvas(props) {
     ////             BEGIN OBJECTS           ////
     /////////////////////////////////////////////
 
-    function Dot(random = true, x = 0, y = 0) {
-        this.size = Math.random() +0.5;
-        this.color = colors[Math.floor((Math.random() * colors.length))];
+    function Dot(random = true, x = 0, y = 0, color = "#888") {
+        this.size = particleSize
+        this.color = color
         
         if (random) {
-          this.x = w / 2 + rnd(w / 2 - 10)
-          this.y = h / 2 + rnd(h / 2 - 10)
+          this.x = w / 2 + rnd(w / 2 * 0.7)
+          this.y = h / 2 + rnd(h / 2 * 0.7)
         } else {
-          this.x = x
-          this.y = y
+          this.x = x + rnd(1)
+          this.y = y + rnd(1)
         }
 
 
-        this.vx = rnd(0.1)
-        this.vy = rnd(0.1)
-
-        this.friction = 1.1
+        this.vx = rnd(brownianForce) 
+        this.vy = rnd(brownianForce) 
 
         this.move = function() {
           
-            var dx = this.x - attractor.x;
-            var dy = this.y - attractor.y;
-            var d2 = (dx * dx + dy * dy);
-            var d = Math.sqrt(dx * dx + dy * dy);
+            var attractor_dx = this.x - attractor.x
+            var attractor_dy = this.y - attractor.y
+            var attractor_d2 = attractor_dx * attractor_dx + attractor_dy * attractor_dy
+            var attractor_d = Math.sqrt(attractor_d2)
 
-            this.vx += rnd(0.1) - dx/d2;
-            this.vy += rnd(0.1) - dy/d2;
+            // this is acceleration of dot
+            this.vx += rnd(brownianForce) 
+            this.vy += rnd(brownianForce) 
+
+            this.vx += (attractor_d < w/10) ? attractor_dx/attractor_d2 * attractorForce : 0
+            this.vy += (attractor_d < w/10) ? attractor_dy/attractor_d2 * attractorForce : 0
           
-            this.x += this.vx;
-            this.y += this.vy;
+            // friction force reduce speed
+            var vv = this.vx * this.vx + this.vy * this.vy
+            var v = Math.sqrt(vv)
+            this.vx = this.vx / (frictionForce * v + 1)
+            this.vy = this.vy / (frictionForce * v + 1)
 
-            this.vx = this.vx / this.friction
-            this.vy = this.vy / this.friction
+            // movement
+            this.x += this.vx
+            this.y += this.vy
 
+            borderDetection(this)
         }
 
         this.draw = function() {
@@ -161,112 +190,92 @@ export function Canvas(props) {
     }
 
  
-    function Line(x = 0, y = 0, r = 0) {
+    function Blob(x = 0, y = 0, r = 0) {
+      this.color = colors[Math.floor((Math.random() * colors.length))]
       this.dots = []
-      let _x,_y,_a = 0
-      let n = 50
-      let d = 1/n
-      while (this.dots.length < n) {
-        _x = Math.sin(2 * Math.PI * _a * d) * r + x;
-        _y = Math.cos(2 * Math.PI * _a * d) * r + y;
-        this.dots.push(new Dot(false , _x, _y));
-        _a++;
+      while (this.dots.length < blobSize) {
+        this.dots.push(new Dot(false,x + rnd (r),y + rnd (r),this.color));
       }
 
       this.draw = function() {
-        let _x,_y,x,y,x_,y_,__x,__y
 
         for (var i = 0; i < this.dots.length; i++) {
-          //collisionDetection(i);
-          //borderDetection(i);
+          boundingForce(this.dots, i);
+          particles(this.dots[i])
           
           this.dots[i].move();
           this.dots[i].draw();
 
           x = this.dots[i].x;
           y = this.dots[i].y;
-
-          
-          if (i == this.dots.length - 1) {
-            x_ = this.dots[0].x;
-            y_ = this.dots[0].y;
-          } else {
-            x_ = this.dots[i+1].x;
-            y_ = this.dots[i+1].y;
-          }
-
-                    
-          if (i == 0) {
-            _x = this.dots[this.dots.length-1].x;
-            _y = this.dots[this.dots.length-1].y;
-          } else {
-            _x = this.dots[i-1].x;
-            _y = this.dots[i-1].y;
-          }
-
-          if (i < 2) {
-            __x = this.dots[this.dots.length-2+i].x;
-            __y = this.dots[this.dots.length-2+i].y;
-          } else {
-            __x = this.dots[i-2].x;
-            __y = this.dots[i-2].y;  
-          }
-
-          /*
-          ctx.beginPath();
-          ctx.moveTo(_x,_y);
-
-          ctx.bezierCurveTo( (_x + x)/2, (_y + y)/2, 
-                             (5*x - 2*x_ + _x)/4, (5*y - 2*y_ + _y)/4, 
-                              x, y )
-          ctx.stroke();
-          */
         }
-        
-      }
-      
-  }
+      } 
+    }
 
+    // force that bounds particles to each other
+    function boundingForce (dots, p) {
+      var dx_blob = 0
+      var dy_blob = 0
 
-
-
-    function collisionDetection(b){
       for (var i = dots.length - 1; i >= 0; i--) {
-        if(i != b) {
-          //ctx.moveTo(dots[b].x, dots[b].y); 
-          //ctx.lineTo(dots[i].x, dots[i].y);
-          
-          var dx = (dots[b].x + dots[b].size) - (dots[i].x + dots[i].size);
-          var dy = (dots[b].y + dots[b].size) - (dots[i].y + dots[i].size);
-          var d = Math.sqrt(dx * dx + dy * dy);
-          if (d < dots[b].size + dots[i].size) {
-              //dots[b].size = dots[b].size > 1 ? dots[b].size-=1 : 1;
-              //dots[i].size = dots[i].size > 1 ? dots[i].size-=1 : 1;
-              dots[b].vx *= -1.02 
-              dots[b].vy *= -1.02 
-              dots[i].vx *= -1.02 
-              dots[i].vy *= -1.02 
+        if(i != p) {
+
+          var dx = dots[i].x - dots[p].x 
+          var dy = dots[i].y - dots[p].y
+
+          dx_blob += (dx * -1) // distance to mass center
+          dy_blob += (dy * -1) // distance to mass center
+
+        }
+      }
+
+      dx_blob = 10 * dx_blob / dots.length // distance to mass center
+      dy_blob = 10 * dy_blob / dots.length // distance to mass center
+
+      var dd_blob  = dx_blob*dx_blob + dy_blob*dy_blob 
+      var d_blob  = Math.sqrt(dd_blob)
+ 
+      if (d_blob > 0) {
+        // force between particle and mass center
+        dots[p].vx += dx_blob / dd_blob * 500 * boundingStrength - dx_blob * blobVolume * boundingStrength
+        dots[p].vy += dy_blob / dd_blob * 500 * boundingStrength - dy_blob * blobVolume * boundingStrength
+      }
+    }
+
+    function particles(dot) {
+      for (var j = blobs.length - 1; j >= 0; j--) {
+        var dots = blobs[j].dots
+        for (var i = dots.length - 1; i >= 0; i--) {
+          if(true) {
+
+            var dx = dots[i].x - dot.x 
+            var dy = dots[i].y - dot.y
+
+            var dd = dx*dx + dy*dy
+            var d = Math.sqrt(dd)
+
+            if (d > 0) {
+              // force between particles 
+              dots[i].vx += dx / (dd * particleInteraction ) - dx * 0.00001 * blobInteraction
+              dots[i].vy += dy / (dd * particleInteraction ) - dy * 0.00001 * blobInteraction
+            }
           }
         }
       }
     }
     
-    function borderDetection(b){
-      for (var i = dots.length - 1; i >= 0; i--) {
-        if(i != b){	
-          if (dots[b].x < 0 - dots[b].size * 2) {
-              dots[b].vx = 1;
-          }			
-         if (dots[b].y < 0 - dots[b].size * 2) {
-              dots[b].vy = 1;
-          }
-          if (dots[b].x > w + dots[b].size * 2) {
-              dots[b].vx = -1;
-          }			
-         if (dots[b].y > h + dots[b].size * 2) {
-              dots[b].vy = -1;
-          }
-        }
+    function borderDetection(dot){
+      if (dot.x < 0 - dot.size * 2) {
+        dot.vx = 1;
+      }			
+      if (dot.y < 0 - dot.size * 2) {
+        dot.vy = 1;
+      }
+      if (dot.x > w + dot.size * 2) {
+        dot.vx = -1;
+      }			
+      if (dot.y > h + dot.size * 2) {
+        dot.vy = -1;
       }
     }
 
@@ -286,34 +295,12 @@ export function Canvas(props) {
       ////           BEGIN DRAW FRAME          ////
       /////////////////////////////////////////////
 
-      ctx.fillStyle = mainColor;
-      ctx.strokeStyle = mainColor;
-      ctx.lineWidth = 0.7;
-
-/*
-      ctx.beginPath();
-      ctx.arc(w/2, h/2, 10*Math.sin(frameCount*0.05)**2, 0, 2*Math.PI);
-      ctx.fill();
-
-
-      for (x = 200; x < w-100; x+=100) {
-        ctx.beginPath();
-        for (y = 100; y < h-100; y+=100) {
-          ctx.bezierCurveTo(x-50, y-50, x+50, y-50, x, y)
-        }
-        ctx.stroke();
-      }
-*/
+      ctx.fillStyle = mainColor
+      ctx.strokeStyle = mainColor
+      ctx.lineWidth = lineWidth
       
-      for (var i = 0; i < dots.length; i++) {
-        collisionDetection(i);
-        borderDetection(i);
-        dots[i].move();
-        dots[i].draw();
-      };
-
-      for (var i = 0; i < lines.length; i++) {
-        lines[i].draw();
+      for (var i = 0; i < blobs.length; i++) {
+        blobs[i].draw();
       };
 
       /////////////////////////////////////////////
