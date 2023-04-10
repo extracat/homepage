@@ -80,7 +80,7 @@ export function Canvas(props) {
                   "#FBB80D"]
                   
     var particleSize = 3
-    if (mobile) {particleSize = 2}
+    if (mobile) {particleSize = 2.7}
 
     var lineWidth = 0.7
 
@@ -89,7 +89,7 @@ export function Canvas(props) {
     var attractorForce = 10
 
     var blobSize = 15 // number of particles in blob
-    if (mobile) {blobSize = 13}
+    if (mobile) {blobSize = 12}
 
     var boundingStrength = 0.3
     var particleInteraction = 1
