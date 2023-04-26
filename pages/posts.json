@@ -4,20 +4,19 @@
       "slug": "/sberpro",
       "image": "/cards/og-sberpro.png",
       "title": "SberPro desktop app redesign",
-      "excerpt": "Offline client app for enterprises, clients of SberBank."
+      "excerpt": "Desktop client app for enterprises, clients of SberBank."
+    },
+    {
+      "slug": "/ftbl",
+      "image": "/cards/og-ftbl.png",
+      "title": "FTBL game mobile app",
+      "excerpt": "Football fans application which combines a chat and prediction game."
     },
     {
       "slug": "/static/timetracker/index.html",
       "image": "/cards/og-timetracker.png",
       "title": "TimeTracker iOS app",
       "excerpt": "The app for HSE Art And Design School students and teachers."
-    },
-    {
-      "slug": "",
-      "image": "/cards/og-ftbl.png",
-      "title": "FTBL chat mobile app",
-      "excerpt": "Football fans application that combines a chat and betting game.",
-      "comingSoon": true
     },
     {
       "slug": "",

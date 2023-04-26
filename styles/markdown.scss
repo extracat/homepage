@@ -25,6 +25,14 @@ hr {
     margin-left: calc(-1 * $content-padding / 2);
     margin-right: calc(-1 * $content-padding / 2);
   }
+  iframe {
+    border-style: none;
+    box-sizing: content-box;
+    width: calc(100% + 2rem);
+    height: calc(100vh - 300px);
+    margin-left: calc(-1 * $content-padding / 2);
+    margin-right: calc(-1 * $content-padding / 2);
+  }
   table {
     border-collapse: collapse;
     tr {
