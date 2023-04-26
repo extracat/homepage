@@ -98,7 +98,7 @@ export function DarkModeButton() {
   return (
     <>
       <a id='darkModeButton' className='darkModeButton' title={ buttonType == 'moon' ? 'Turn on the light' : 'Turn off the light' } style={{cursor: 'pointer'}} onClick={toggleDarkMode}>
-        { buttonType == 'moon' ? <TbMoon className="react-icon moon-icon" /> : <MdOutlineLightMode className="react-icon sun-icon" /> }
+        { buttonType == 'moon' ? <TbMoon id='darkModeButton-moon' className="react-icon moon-icon" /> : <MdOutlineLightMode id='darkModeButton-sun' className="react-icon sun-icon" /> }
       </a>
     </>
   );
