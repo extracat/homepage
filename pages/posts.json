@@ -3,26 +3,26 @@
     {
       "slug": "/sberpro",
       "image": "/cards/og-sberpro.png",
-      "title": "SberPro desktop app redesign",
-      "excerpt": "Desktop client app for enterprises, clients of SberBank."
+      "title": "Redesign of SberPro — desktop app  for enterprises, clients of SberBank",
+      "excerpt": ""
     },
     {
       "slug": "/ftbl",
       "image": "/cards/og-ftbl.png",
-      "title": "FTBL game mobile app",
-      "excerpt": "Football fans application which combines a chat and prediction game."
+      "title": "FTBL game mobile application",
+      "excerpt": ""
     },
     {
       "slug": "/static/timetracker/index.html",
       "image": "/cards/og-timetracker.png",
-      "title": "TimeTracker iOS app",
-      "excerpt": "The app for HSE Art And Design School students and teachers."
+      "title": "HSE Art and Design School time tracker app",
+      "excerpt": ""
     },
     {
       "slug": "",
       "image": "/cards/og-kredo.png",
-      "title": "Crowdfunding platform",
-      "excerpt": "The platform which helps small business  to raise funds for growth.",
+      "title": "Crowdfunding platform helping small Businesses to raise funds",
+      "excerpt": "",
       "comingSoon": true
     }
 

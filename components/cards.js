@@ -13,7 +13,7 @@ export function Cards() {
             <div className="card-text">
               { p.comingSoon ? <ComingSoon /> : "" }
               <h3>{p.title}</h3>
-              <p>{p.excerpt}</p>
+              { p.excerpt ? <p>{p.excerpt}</p> : "" }
             </div>
           </Link>
         ))}
