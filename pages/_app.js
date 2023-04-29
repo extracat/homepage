@@ -20,6 +20,7 @@ const components = {
 
 function MyApp({ Component, pageProps }) {
 
+  {/* Google Analytics event fires on page view */}
   const router = useRouter();
   useEffect(() => {
     const handleRouteChange = (url) => {
@@ -30,6 +31,7 @@ function MyApp({ Component, pageProps }) {
       router.events.off("routeChangeComplete", handleRouteChange);
     };
   }, [router.events]);
+  
 
   return (
     <>
@@ -46,14 +48,14 @@ function MyApp({ Component, pageProps }) {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', '${gtag.GA_TRACKING_ID}', {
-              page_path: window.location.pathname,
-            });
+
+            gtag('config', '${gtag.GA_TRACKING_ID}');
           `,
         }}
       />
 
       {/* Google Tag Manager */}
+
       <Script
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
@@ -66,6 +68,7 @@ function MyApp({ Component, pageProps }) {
           `,
         }}
       />
+
 
       <Component {...pageProps} components={components} />
     </>
