@@ -20,6 +20,13 @@
     },
     {
       "slug": "",
+      "image": "/cards/og-dashboard.png",
+      "title": "SberBusiness treasurer dashboard",
+      "excerpt": "",
+      "nda": true
+    },
+    {
+      "slug": "",
       "image": "/cards/og-kredo.png",
       "title": "Crowdfunding platform helping small Businesses to raise funds",
       "excerpt": "",

@@ -123,3 +123,49 @@ blockquote {
     margin: 1rem 0;
   }
 }
+
+
+/************ Grid of Images ***********/
+
+.image-grid {
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  flex-wrap: wrap;
+  max-width: $content-max-width;
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+}
+
+
+.image-cell {
+  margin: 0 0.5rem;
+  text-align: left;
+  text-decoration: none;
+  max-height: fit-content;
+  width: calc(50% - 1.1rem);
+  align-self: start;
+  p{
+    margin: 0.5rem 0;
+    padding: 0;
+  }
+  img {
+    width: 100%;
+    height: auto;
+    margin-left: unset;
+    margin-right: unset;
+  }
+}
+
+
+@media (max-width: $mobile-width) {
+  .image-grid {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .image-cell {
+    width: 100%;
+  }
+  
+}
