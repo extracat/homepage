@@ -8,9 +8,9 @@
     $var-accent,
     $var-layout-bg,
     $var-layout-border,
-    $var-layout-card-backgroud,
-    $var-layout-card-ative-backgroud,
-    $var-text-card-active
+    $var-card-bg,
+    $var-card-ative-bg,
+    $var-card-text-active
   ) {
     color: $var-text-base;
     background: $var-layout-bg;
@@ -43,7 +43,7 @@
     }
 
     .card {
-      background-color: $var-layout-card-backgroud;
+      background-color: $var-card-bg;
       transition: 
         border-color $global-transition-time ease,
         background-color $global-transition-time ease,
@@ -52,8 +52,8 @@
     }
 
     .card:hover {
-      border-color: $var-text-card-active;
-      background-color: $var-layout-card-ative-backgroud;
+      border-color: $var-card-text-active;
+      background-color: $var-card-ative-bg;
       transition: 
         border-color $global-transition-time ease,
         background-color $global-transition-time ease,
@@ -83,7 +83,7 @@
 
     aside {
       border-color: $var-layout-border;
-      background-color: $var-layout-card-backgroud;
+      background-color: $var-card-bg;
       transition: 
         border-color $global-transition-time ease,
         background-color $global-transition-time ease;
@@ -116,9 +116,9 @@ html, html.light-mode {
     $color-accent,
     $color-layout-bg,
     $color-layout-border,
-    $color-layout-card-backgroud,
-    $color-layout-card-ative-backgroud,
-    $color-text-card-active
+    $color-card-bg,
+    $color-card-ative-bg,
+    $color-card-text-active
   );
 }
 
@@ -134,9 +134,9 @@ html, html.light-mode {
       $color-darkmode-accent,
       $color-darkmode-layout-bg,
       $color-darkmode-layout-border,
-      $color-darkmode-layout-card-backgroud,
-      $color-darkmode-layout-card-ative-backgroud,
-      $color-darkmode-text-card-active
+      $color-darkmode-card-bg,
+      $color-darkmode-card-ative-bg,
+      $color-darkmode-card-text-active
     );
   }
 }
@@ -154,9 +154,9 @@ html, html.light-mode {
         $color-darkmode-accent,
         $color-darkmode-layout-bg,
         $color-darkmode-layout-border,
-        $color-darkmode-layout-card-backgroud,
-        $color-darkmode-layout-card-ative-backgroud,
-        $color-darkmode-text-card-active
+        $color-darkmode-card-bg,
+        $color-darkmode-card-ative-bg,
+        $color-darkmode-card-text-active
       );
     }
   }
