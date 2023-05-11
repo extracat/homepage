@@ -7,6 +7,7 @@ import '../styles/layout.scss'
 import '../styles/typography-sans.scss'
 import '../styles/markdown.scss'
 import '../styles/colors.scss'
+import '../styles/components.scss'
 
 // MD Style Wrapper
 const components = {
