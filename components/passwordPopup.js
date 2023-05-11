@@ -18,7 +18,7 @@ function PasswordPopup(props) {
     event.preventDefault();
 
     // Replace 'password123' with the actual password that should be accepted
-    if (password === 'abv') {
+    if (password === 'knockknock') {
 
       let url = ""
 
