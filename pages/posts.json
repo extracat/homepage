@@ -3,34 +3,39 @@
     {
       "slug": "/sberpro",
       "image": "/cards/og-sberpro.png",
-      "title": "Redesign of SberPro — desktop app  for enterprises, clients of SberBank",
-      "excerpt": ""
+      "title": "Redesign of SberPro — desktop app  for large enterprises, clients of SberBank",
+      "excerpt": "",
+      "tags": ["Product Design", "Case Study", "Desktop"]
     },
     {
       "slug": "/ftbl",
       "image": "/cards/og-ftbl.png",
-      "title": "FTBL game mobile application",
-      "excerpt": ""
+      "title": "Football fans chat mobile app and prediction game",
+      "excerpt": "",
+      "tags": ["UX/UI", "Concept", "Mobile"]
     },
     {
       "slug": "/static/timetracker/index.html",
       "image": "/cards/og-timetracker.png",
-      "title": "HSE Art and Design School time tracker app",
-      "excerpt": ""
+      "title": "Time schedule app for teachers and students of HSE Art and Design School",
+      "excerpt": "",
+      "tags": ["Product Design", "Mobile"]
     },
     {
       "slug": "",
       "image": "/cards/og-dashboard.png",
-      "title": "SberBusiness treasurer dashboard",
+      "title": "Treasurer's dashboard for corporate clients of SberBank",
       "excerpt": "",
-      "nda": true
+      "nda": true,
+      "tags": ["UX/UI", "Concept", "Web", "Infographics"]
     },
     {
       "slug": "",
       "image": "/cards/og-kredo.png",
-      "title": "Crowdfunding platform helping small Businesses to raise funds",
+      "title": "Crowdfunding platform helping small businesses to raise funds",
       "excerpt": "",
-      "comingSoon": true
+      "comingSoon": true,
+      "tags": ["UX/UI", "Concept", "Web"]
     }
 
   ]
