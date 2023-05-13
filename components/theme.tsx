@@ -2,8 +2,8 @@ import type { NextraThemeLayoutProps } from 'nextra';
 import React from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
-import { Header } from './header';
-import { Footer } from './footer';
+import { Header } from './Header';
+import { Footer } from './Footer';
 
 export default function Layout({ children, pageOpts }: NextraThemeLayoutProps) {
   const {

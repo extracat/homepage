@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { DarkModeButton } from './darkModeButton.js';
+import { DarkModeButton } from './DarkModeButton';
 
 export function Header() {
   return (

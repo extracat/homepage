@@ -22,7 +22,7 @@
       "tags": ["Product Design", "Mobile"]
     },
     {
-      "slug": "",
+      "slug": "/dashboard",
       "image": "/cards/og-dashboard.png",
       "title": "Treasurer's dashboard for corporate clients of SberBank",
       "excerpt": "",
@@ -30,7 +30,7 @@
       "tags": ["UX/UI", "Concept", "Web", "Infographics"]
     },
     {
-      "slug": "",
+      "slug": "/kredo",
       "image": "/cards/og-kredo.png",
       "title": "Crowdfunding platform helping small businesses to raise funds",
       "excerpt": "",

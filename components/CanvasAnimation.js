@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react'
 
-export function Canvas(props) {
+export function CanvasAnimation(props) {
   
   const canvasRef = useRef(null)
 
