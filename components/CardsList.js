@@ -3,7 +3,7 @@ import Link from 'next/link'
 import posts from '../pages/posts.json'
 import Image from 'next/image'
 import { Tag } from './Tag'
-import { PasswordPopup } from './passwordPopup'
+import { PasswordPopup } from './PasswordPopup'
 
 export function CardsList() {
 
