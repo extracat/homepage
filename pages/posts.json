@@ -8,6 +8,15 @@
       "tags": ["Product Design", "Case Study", "Desktop"]
     },
     {
+      "slug": "/tablet",
+      "image": "/cards/og-tablet.png",
+      "title": "SberBusiness universal app adaptation for tablet devices",
+      "excerpt": "",
+      "nda": true,
+      "comingSoon": true,
+      "tags": ["UX/UI", "Concept", "Mobile"]
+    },
+    {
       "slug": "/ftbl",
       "image": "/cards/og-ftbl.png",
       "title": "Football fans chat mobile app and prediction game",

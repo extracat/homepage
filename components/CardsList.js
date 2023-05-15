@@ -29,7 +29,7 @@ export function CardsList() {
           // If project is "NDA" or "Coming Soon" card will be without link
           if (p.nda || p.comingSoon) return (
             <a onClick={p.nda ? handleLinkClick : null} key={p.slug} className={ p.comingSoon ? "card nolink" : "card" }>
-              { p.image != "" ? <Image alt="Card Image" className="card-image no-bleed" src={p.image} width={1200} height={630} /> : ''}
+              { p.image != "" ? <Image unoptimized alt="Card Image" className="card-image no-bleed" src={p.image} width={1200} height={630} /> : ''}
               <div className="card-text">
                 <div className="tags">
                   { p.comingSoon ? <Tag className="coming-soon">Coming soon</Tag> : "" }
@@ -45,7 +45,7 @@ export function CardsList() {
           // Other regular project cards
           else return (
             <Link key={p.slug} href={p.slug} className="card">
-              { p.image != "" ? <Image alt="Card Image" className="card-image no-bleed" src={p.image} width={1200} height={630} /> : ''}
+              { p.image != "" ? <Image unoptimized alt="Card Image" className="card-image no-bleed" src={p.image} width={1200} height={630} /> : ''}
               <div className="card-text">
                 <div className="tags">               
                   { p.tags.map((t) => (<Tag key={t}>{t}</Tag>))}

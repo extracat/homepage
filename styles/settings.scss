@@ -12,25 +12,25 @@ $dark-mode-auto: true;
 
 $global-transition-time: 0.2s;
 
-$color-text-base: #333;
-$color-text-strong: #333;
-$color-accent: #ff6b51;
+$color-text-base: rgb(51, 51, 51);
+$color-text-strong: rgb(51, 51, 51);
+$color-accent: rgb(255, 107, 81);
 $color-text-link: $color-text-base; 
 $color-text-link-hover: $color-accent;
-$color-layout-bg: #F7F7F7;
-$color-layout-border: #dcdcdc;
-$color-card-bg: #f0f1f2;
-$color-card-ative-bg: #F7F7F7;
+$color-layout-bg: rgb(247, 247, 247);
+$color-layout-border: rgb(220, 220, 220);
+$color-card-bg: rgb(240, 241, 242);
+$color-card-ative-bg: rgb(247, 247, 247);
 $color-card-text-active: $color-accent;
 
-$color-darkmode-text-base: #ccc;
-$color-darkmode-text-strong: #eee;
-$color-darkmode-accent: #ff6b51;
+$color-darkmode-text-base: rgb(204, 204, 204);
+$color-darkmode-text-strong: rgb(238, 238, 238);
+$color-darkmode-accent: rgb(255, 107, 81);
 $color-darkmode-text-link-hover: $color-darkmode-accent;
 $color-darkmode-text-link: $color-darkmode-text-base;
-$color-darkmode-layout-bg: #000;
-$color-darkmode-layout-border: #303b40;
-$color-darkmode-card-bg: #101317;
-$color-darkmode-card-ative-bg: #1a1f26;
+$color-darkmode-layout-bg: rgb(0, 0, 0);
+$color-darkmode-layout-border: rgb(48, 59, 64);
+$color-darkmode-card-bg: rgb(16, 19, 23);
+$color-darkmode-card-ative-bg: rgb(26, 31, 38);
 $color-darkmode-card-text-active: $color-darkmode-accent;
 
