@@ -12,6 +12,15 @@ $dark-mode-auto: true;
 
 $global-transition-time: 0.2s;
 
+
+
+  ///////////////////////////
+ //     Design Tokens     //
+///////////////////////////
+
+// Color Palette
+@import 'color-palette.scss';
+
 $color-text-base: rgb(51, 51, 51);
 $color-text-strong: rgb(51, 51, 51);
 $color-accent: rgb(255, 107, 81);

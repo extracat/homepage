@@ -6,7 +6,7 @@ import '../styles/defaults.scss'
 import '../styles/layout.scss'
 import '../styles/typography-sans.scss'
 import '../styles/markdown.scss'
-import '../styles/colors.scss'
+import '../styles/color-scheme.scss'
 import '../styles/components.scss'
 
 // MD Style Wrapper
