@@ -12,8 +12,7 @@
       "image": "/cards/og-tablet.png",
       "title": "SberBusiness universal app adaptation for tablet devices",
       "excerpt": "",
-      "nda": true,
-      "comingSoon": true,
+      "nda": false,
       "tags": ["UX/UI", "Concept", "Mobile"]
     },
     {
