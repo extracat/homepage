@@ -29,10 +29,10 @@ $color-text-strong: $cp-grey-03;
 $color-accent: $cp-red-06;
 $color-text-link: $color-text-base; 
 $color-text-link-hover: $color-accent;
-$color-layout-bg: $cp-white;
-$color-layout-border: $cp-grey-10;
-$color-card-bg: $cp-grey-11;
-$color-card-ative-bg: $color-layout-bg;
+$color-layout-bg: $cp-grey-11;
+$color-layout-border: $cp-grey-09;
+$color-card-bg: $cp-white;
+$color-card-ative-bg: $cp-white;
 $color-card-text-active: $color-accent;
 
 // Dark
@@ -41,21 +41,21 @@ $color-darkmode-text-strong: $cp-grey-11;
 $color-darkmode-accent: $cp-red-06;
 $color-darkmode-text-link-hover: $color-darkmode-accent;
 $color-darkmode-text-link: $color-darkmode-text-base;
-$color-darkmode-layout-bg: $cp-black;
-$color-darkmode-layout-border: $cp-grey-03;
-$color-darkmode-card-bg: $cp-grey-02;
+$color-darkmode-layout-bg: $cp-grey-02;
+$color-darkmode-layout-border: $cp-grey-04;
+$color-darkmode-card-bg: $cp-grey-03;
 $color-darkmode-card-ative-bg: $cp-grey-03;
 $color-darkmode-card-text-active: $color-darkmode-accent;
 
 
 // Tags Color
-$color-tag-yellow: #FFCC3F;
-$color-tag-red: #F25B41;
-$color-tag-blue: #A1BBFA;
-$color-tag-cyan: #72E3EB;
-$color-tag-green: #90E465;
-$color-tag-grey: #E8E8E8;
-$color-tag-magenta: #E79CDA;
+$color-tag-yellow: $cp-yellow-06;
+$color-tag-red: $cp-red-05;
+$color-tag-blue: $cp-blue-10;
+$color-tag-cyan: $cp-cyan-09;
+$color-tag-green: $cp-green-08;
+$color-tag-grey: $cp-grey-10;
+$color-tag-magenta: $cp-magenta-08;
 
 
 // Canvas Art Colors
