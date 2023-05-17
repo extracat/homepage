@@ -32,8 +32,8 @@ export function CardsList() {
               { p.image != "" ? <Image unoptimized alt="Card Image" className="card-image no-bleed" src={p.image} width={1200} height={630} /> : ''}
               <div className="card-text">
                 <div className="tags">
-                  { p.comingSoon ? <Tag className="coming-soon">Coming soon</Tag> : "" }
-                  { p.nda ? <Tag className="nda">NDA</Tag> : "" }
+                  { p.comingSoon ? <Tag>Coming Soon</Tag> : "" }
+                  { p.nda ? <Tag>NDA</Tag> : "" }
                   { p.tags.map((t) => (<Tag key={t}>{t}</Tag>))}
                 </div>
                 <h3>{p.title}</h3>

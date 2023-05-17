@@ -13,14 +13,14 @@
       "title": "SberBusiness universal app adaptation for tablet devices",
       "excerpt": "",
       "nda": false,
-      "tags": ["UX/UI", "Concept", "Mobile"]
+      "tags": ["UX/UI", "Mobile"]
     },
     {
       "slug": "/ftbl",
       "image": "/cards/og-ftbl.png",
       "title": "Football fans chat mobile app and prediction game",
       "excerpt": "",
-      "tags": ["UX/UI", "Concept", "Mobile"]
+      "tags": ["UX/UI", "Mobile"]
     },
     {
       "slug": "/static/timetracker/index.html",
@@ -35,7 +35,7 @@
       "title": "Treasurer's dashboard for corporate clients of SberBank",
       "excerpt": "",
       "nda": true,
-      "tags": ["UX/UI", "Concept", "Web", "Infographics"]
+      "tags": ["UX/UI", "Web", "Infographics"]
     },
     {
       "slug": "/kredo",
@@ -43,7 +43,7 @@
       "title": "Crowdfunding platform helping small businesses to raise funds",
       "excerpt": "",
       "comingSoon": true,
-      "tags": ["UX/UI", "Concept", "Web"]
+      "tags": ["UX/UI", "Web"]
     }
 
   ]

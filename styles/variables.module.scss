@@ -1,0 +1,77 @@
+// Global layout vars
+$mobile-width: 600px;
+$content-max-width: 1000px;  
+$content-padding: 2rem; // Left and right padding
+
+
+// Enables dark mode switching 
+$dark-mode-switch: true;
+
+// Respect device's dark mode preferences
+$dark-mode-auto: true;
+
+$global-transition-time: 0.2s;
+
+
+
+  ///////////////////////////
+ //     Design Tokens     //
+///////////////////////////
+
+// Color Palette
+@import 'color-palette.scss';
+
+// Color Scheme Tokens
+
+// Light
+$color-text-base: $cp-grey-03;
+$color-text-strong: $cp-grey-03;
+$color-accent: $cp-red-06;
+$color-text-link: $color-text-base; 
+$color-text-link-hover: $color-accent;
+$color-layout-bg: $cp-white;
+$color-layout-border: $cp-grey-10;
+$color-card-bg: $cp-grey-11;
+$color-card-ative-bg: $color-layout-bg;
+$color-card-text-active: $color-accent;
+
+// Dark
+$color-darkmode-text-base: $cp-grey-09;
+$color-darkmode-text-strong: $cp-grey-11;
+$color-darkmode-accent: $cp-red-06;
+$color-darkmode-text-link-hover: $color-darkmode-accent;
+$color-darkmode-text-link: $color-darkmode-text-base;
+$color-darkmode-layout-bg: $cp-black;
+$color-darkmode-layout-border: $cp-grey-03;
+$color-darkmode-card-bg: $cp-grey-02;
+$color-darkmode-card-ative-bg: $cp-grey-03;
+$color-darkmode-card-text-active: $color-darkmode-accent;
+
+
+// Tags Color
+$color-tag-yellow: #FFCC3F;
+$color-tag-red: #F25B41;
+$color-tag-blue: #A1BBFA;
+$color-tag-cyan: #72E3EB;
+$color-tag-green: #90E465;
+$color-tag-grey: #E8E8E8;
+$color-tag-magenta: #E79CDA;
+
+
+// Canvas Art Colors
+$color-canvas-art-01: $cp-red-06;
+$color-canvas-art-02: $cp-blue-06;
+$color-canvas-art-03: $cp-cyan-06;
+$color-canvas-art-04: $cp-green-06;
+$color-canvas-art-05: $cp-magenta-06;
+$color-canvas-art-06: $cp-yellow-05;
+
+
+:export {
+  colorCanvasArt01: $color-canvas-art-01;
+  colorCanvasArt02: $color-canvas-art-02;
+  colorCanvasArt03: $color-canvas-art-03;
+  colorCanvasArt04: $color-canvas-art-04;
+  colorCanvasArt05: $color-canvas-art-05;
+  colorCanvasArt06: $color-canvas-art-06;
+}

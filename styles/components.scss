@@ -1,4 +1,4 @@
-@import 'variables.scss';
+@import 'variables.module.scss';
 
 /************ Grid of Cards ***********/
 
@@ -84,22 +84,40 @@ a.card.nolink {
   font-size: 0.6rem;
   font-weight: 500;
   letter-spacing: 0.04em;
-  background-color: #D5DBE0;
-  color: $color-text-base;
+  background-color: $color-tag-grey;
+  color: $cp-black;
   border-radius: 1rem;
 }
 
 .coming-soon {
-    background-color: #FFCC3F;
-    color: $color-text-base;
+    background-color: $color-tag-yellow;
+    color: $cp-black;
 }
 
 .nda {
-  background-color: #ff6536;
-  color: #FFF;
+  background-color: $color-tag-red;
+  color: $cp-white;
 }
 
+.uxui {
+  background-color: $color-tag-blue;
+  color: $cp-black;
+}
 
+.uxui {
+  background-color: $color-tag-blue;
+  color: $cp-black;
+}
+
+.product-design {
+  background-color: $color-tag-green;
+  color: $cp-black;
+}
+
+.mobile {
+  background-color: $color-tag-cyan;
+  color: $cp-black;
+}
 
 /* Overlay styles */
 .password-popup-overlay {

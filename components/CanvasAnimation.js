@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from 'react'
+import globalColors from '../styles/variables.module.scss';
 
 export function CanvasAnimation(props) {
   
@@ -67,17 +68,17 @@ export function CanvasAnimation(props) {
       mobile = true
     }
 
-
     var x = 0
     var y = 0
 
-    var mainColor = "#ff6b51"
-    var colors = [mainColor,
-                  "#3DD2DC",
-                  "#7EDC52",
-                  "#527CE8",
-                  "#D66AC4", 
-                  "#FBB80D"]
+    var mainColor = globalColors.colorCanvasArt01
+    var colors = [globalColors.colorCanvasArt01,
+                  globalColors.colorCanvasArt02,
+                  globalColors.colorCanvasArt03,
+                  globalColors.colorCanvasArt04,
+                  globalColors.colorCanvasArt05,
+                  globalColors.colorCanvasArt06,
+                  ]
                   
     var particleSize = 3
     if (mobile) {particleSize = 2.7}
