@@ -1,6 +1,7 @@
 import Script from 'next/script'
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
+import Cookies from 'js-cookie';
 import * as gtag from '../lib/gtag'
 import '../styles/defaults.scss'
 import '../styles/layout.scss'
@@ -33,6 +34,17 @@ function MyApp({ Component, pageProps }) {
     };
   }, [router.events]);
   
+
+
+  {/*  Reset NDA cookie if needed */}
+  useEffect(() => {
+    if (router.query.reset === 'true') {
+      Cookies.remove('ndaPassed');
+      router.replace(router.pathname, router.asPath.split('?')[0], { shallow: true });
+    }
+  }, [router.query.reset]);
+
+
 
   return (
     <>

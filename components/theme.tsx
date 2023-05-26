@@ -1,5 +1,7 @@
 import type { NextraThemeLayoutProps } from 'nextra';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import Cookies from 'js-cookie';
+import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Head from 'next/head';
 import { Header } from './Header';
@@ -13,7 +15,7 @@ export default function Layout({ children, pageOpts }: NextraThemeLayoutProps) {
     pageMap,
     route
   } = pageOpts
- 
+
   const htmlHead = (
     <Head>
       <title>{title}</title>
@@ -39,6 +41,35 @@ export default function Layout({ children, pageOpts }: NextraThemeLayoutProps) {
   var homepageClass = ''
 
 
+  // NDA password check
+  const router = useRouter();
+  const [password, setPassword] = useState('');
+  const [ndaPassed, setNdaPassed] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+      const ndaCookie = Cookies.get('ndaPassed');
+      setNdaPassed(ndaCookie === 'true');
+      setIsLoading(false);
+  }, []);
+  
+  if (isLoading) {
+      return "Loading..."; 
+  }
+  
+
+  const isNdaPage = frontMatter && frontMatter.nda === true;
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (password === 'knockknock') {
+      Cookies.set('ndaPassed', 'true', { expires: 90 });
+      router.reload();
+    } else {
+      alert('Incorrect password');
+    }
+  }
+
   return (
     <div className={route == "/" ? "container homepage" : "container"}>
       {htmlHead}
@@ -51,18 +82,26 @@ export default function Layout({ children, pageOpts }: NextraThemeLayoutProps) {
             <div className="main-content">
               <article>
 
-                {/*
-                <div>
-                  Table of Contents:
-                  <ul>
-                    {headings.map((heading) => (
-                      <li key={heading.value}>{heading.value}</li>
-                    ))}
-                  </ul>
-                </div>
-                */}
-
-                {children}
+                {/* Checking if the page is NDA */}
+                {isNdaPage && !ndaPassed ?
+                  (
+                    <form onSubmit={handleSubmit}>
+                      <div>
+                        <label htmlFor="password-input">This is NDA project</label>
+                      </div>
+                      <input 
+                        type="password" 
+                        value={password} 
+                        onChange={(e) => setPassword(e.target.value)} 
+                        placeholder="Enter password" 
+                        required 
+                      />
+                      <div><button type="submit">Let me in</button></div>
+                    </form>
+                  ) : (
+                    children
+                  )
+                }
 
                 {// This renders only on the specified route
                 <ConditionalWrapper condition={route == "/"}>

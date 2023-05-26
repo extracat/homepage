@@ -12,6 +12,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "js-cookie": "^3.0.5",
     "next": "^13.2.4",
     "nextra": "^2.2.19",
     "react": "^18.2.0",
