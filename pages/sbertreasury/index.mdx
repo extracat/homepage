@@ -1,0 +1,103 @@
+---
+title: Design managment of SberTreasury team
+description: My role was to lead a team of 3 designers, setup the design process, and help 7 product teams to remake all product features from legacy to new platform and launch MVP.
+image: /cards/og-sbertreasury.png
+slug: /sbertreasury
+---
+
+# Design managment of SberTreasury team
+
+<aside className="extra-margin">
+💡 **Summary**
+
+My role was to lead a team of 3 designers, setup the design process, and help 7 product teams to remake all product features from legacy to new platform and launch MVP.
+
+As a result, 13 new features were released, and 200 new companies started using SberTreasury regularly in the run of two years. 
+
+</aside>
+
+SberTreasury is a set of bank products for large enterprises, especially for holdings and groups of companies.
+
+This was a brand new product, made to replace old legacy product named "Sberbank Corporation", and transfer all of 50K users from it.
+
+My role was to lead a team of 3 designers, setup the design process, and help 7 product teams to remake all product features from legacy to new platform and launch MVP.
+
+## Team structure
+
+! [st-team-structure](./img/st-team-structure.png)
+
+We operated across SberBusiness and SberTreasury channels, each with a dedicated core design team. Various product teams were involved in developing business features. Some product teams had their own designers; others didn't. Cross-channel teams served both channels.
+
+Additionally, platform teams created platform features and UI components, and research teams conducted UX research, gathered metrics, and extracted insights from user feedback.
+
+In my role, I oversaw the SberTreasury channel, a cross-channel team, and the platform team's design operations. My developer background significantly aided this process.
+
+## Design process
+
+! [st-design-process](./img/st-design-process.png)
+
+1. **Discovery & Research:** Conducted user research and learned about business processes from both the client and bank perspectives. Collected metrics and examined competitor implementations.
+
+2. **Prototyping & Testing:** Created and tested prototypes via client interviews and Hallway tests.
+
+3. **Final Design:** Went through multiple iterations of layout adjustments and held team discussions to refine the design.
+
+4. **Handoff & Guidelines:** Established guidelines and transitioned the design to the development team upon completion.
+
+5. **Review & QA:** Collaborated with the QA team to track and list bugs.
+
+6. **Monitoring GA:** Collected and analyzed metrics that had been defined at the beginning of the process.
+
+There is more detailed design process scheme in Figma. 
+
+Now let me explain some parts of our design process and culture in more details. 
+
+## Research & test
+
+! [st-research-cycle](./img/st-research-cycle.png)
+
+Work on any task began with research, involving competitor analysis, business process examination, and metric evaluation of existing features. Even though our channel's features were in the MVP stage, some were already implemented in other channels, such as SberBusiness and the legacy Sberbank Corporation software.
+
+If we needed additional information, we partnered with our UX researchers from both channels, who could engage directly with clients, conduct surveys, and collect business data.
+
+For complex tasks, we developed prototypes and tested them through client interviews and hallway tests.
+
+A crucial part of our research was analyzing the GA feedback on our decisions.
+
+## Design & standard
+
+! [st-design-standart](./img/st-design-standart.png)
+
+The SberTreasury channel's Design Standard is made up of several elements:
+
+1. Basic SberBusiness design system and UX-writing guides.
+2. SberBusiness react component library.
+3. SberTreasury additional design guidelines and an extra react components library.
+
+The challenge was synchronizing the SberBusiness and SberTreasury libraries in Figma and managing the dependencies and changes between the two. The SberBusiness library, maintained by the SberBusiness team, evolved at its own pace. While we could request modifications to the original library, it was often inefficient and slow. Hence, we developed our own library, derived from the main SberBusiness library.
+
+## Design handoff
+
+- Versioning in Figma
+- Guidelines for dev teams
+- Two-layer design system
+
+Given our microservice-based product, features were delivered at their own pace, each with a unique version history. Occasionally, multiple versions of a feature were developed concurrently. Thus, implementing a versioning system in our Figma files was crucial, which we accomplished through file naming rules.
+
+Each feature or scenario was assigned a separate file, with each new version generating a new file. Files went through three stages - WIP, DONE, and released - indicated by icons.
+
+When a file reached the DONE stage, it was locked, handed over to the dev team, and made immune to future changes.
+
+## Develop & QA
+
+3 stages of review:
+- Demo Day review
+- QA session with team
+- UUT Test Bench review
+
+Following the development phase, we evaluated the outcome during a demo meeting. In addition, we collaborated with QA engineers to identify and catalog bugs, creating a backlog for future rectifications.
+
+The final review took place on the Test Bench, a comprehensive testing environment, before officially releasing the product. This step was crucial to ensure that any remaining issues were identified and resolved, guaranteeing a smooth launch.
+
+## Design sprints
+
