@@ -45,20 +45,14 @@ export default function Layout({ children, pageOpts }: NextraThemeLayoutProps) {
   const router = useRouter();
   const [password, setPassword] = useState('');
   const [ndaPassed, setNdaPassed] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
       const ndaCookie = Cookies.get('ndaPassed');
       setNdaPassed(ndaCookie === 'true');
-      setIsLoading(false);
   }, []);
-  
-  if (isLoading) {
-      return "Loading..."; 
-  }
-  
-
+    
   const isNdaPage = frontMatter && frontMatter.nda === true;
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
