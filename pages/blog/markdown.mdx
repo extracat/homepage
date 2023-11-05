@@ -1,0 +1,125 @@
+---
+title: Markdown
+description: About markdown language
+slug: /blog/markdown2
+---
+
+# Markdown
+
+With **Nextra**, all your `.md` and `.mdx` files under the pages directory will be rendered with [MDX](https://mdxjs.com/about), it's an advanced Markdown format with React component support.
+
+
+### Math
+
+$
+\displaystyle f'(x) = \lim_{\Delta x \to 0} \frac{f(x+\Delta x) - f(x)}{\Delta x} 
+$
+
+
+
+### Emphasis
+
+**This is bold text**
+
+__This is bold text__
+
+*This is italic text*
+
+_This is italic text_
+
+~~Strikethrough~~
+
+### Code
+
+Inline `print ("Hello world!");`
+
+Block code "fences" (syntax highlighting)
+
+``` js
+var foo = function (bar) {
+  return bar++;
+};
+
+console.log(foo(5));
+```
+
+
+## Links
+
+[link text](http://dev.nodeca.com)
+
+[link with title](http://nodeca.github.io/pica/demo/ "title text!")
+
+Autoconverted link https://github.com/nodeca/pica 
+
+Images with a reference later in the document defining the URL location:
+
+![Alt text][id]
+
+
+
+
+# Hello, This Is a _Title_ Inside `h1`
+
+## Hello, This Is a _Title_ Inside `h2`
+
+### Hello, This Is a _Title_ Inside `h3`
+
+#### Hello, This Is a _Title_ Inside `h4`
+
+##### Hello, This Is a _Title_ Inside `h5`
+
+###### Hello, This Is a _Title_ Inside `h6`  
+
+## List
+
+1. one
+    1. Where some people measure progress in answers-right per test or tests-passed per year, we are more interested in Sistine-Chapel-Ceilings per Lifetime.
+    2. one three
+2. two
+3. three
+
+- one
+  - another one
+  - Where some people measure progress in answers-right per test or tests-passed per year, we are more interested in Sistine-Chapel-Ceilings per Lifetime.
+    - one
+    - another one
+    - two
+    - three
+- two
+- three
+
+## Task List
+
+- [x] Write the press release
+- [ ] Update the website
+- [ ] Contact the media
+
+
+## Blockquote
+
+> Where some people measure progress in answers-right per test or tests-passed per year, we are more interested in Sistine-Chapel-Ceilings per Lifetime.
+>
+> — Alan Kay, A Personal Computer for Children of All Ages
+
+Nested quotes:
+
+> > Where some people measure progress in answers-right per test or tests-passed per year, we are more interested in Sistine-Chapel-Ceilings per Lifetime.
+> >
+> > — Alan Kay, A Personal Computer for Children of All Ages
+>
+> This is **great**.
+>
+> — Shu Ding.
+
+## Table
+
+| Syntax        | 111         |   Test Text |
+| :------------ | :---------: | ----------: |
+| Header        |    Title    | Here's this |
+| Paragraph     |    Text     |    And more |
+| Strikethrough |             |    ~~Text~~ |
+
+
+
+[id]: https://octodex.github.com/images/dojocat.jpg  "The Dojocat"
