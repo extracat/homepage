@@ -10,10 +10,11 @@ export function Header() {
             <Link href="/" title="Home"><span className='first-letter'>A</span>B</Link>
           </div>
           <div className='col align-right top-menu'>
+            {/*
             <div className='align-center menu-item'>
               <Link href="/#work">Work</Link>  
             </div>
-
+            */}
             <div className='align-center menu-item'>
               <Link href="/cv">About / CV</Link>      
             </div>

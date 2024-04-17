@@ -1,6 +1,6 @@
 {
   "name": "homepage",
-  "version": "0.0.5",
+  "version": "1.0.1",
   "description": "homepage",
   "private": true,
   "author": "Extracat",
@@ -12,7 +12,6 @@
     "start": "next start"
   },
   "dependencies": {
-    "@vercel/blob": "^0.16.1",
     "cookies-next": "^2.1.2",
     "js-cookie": "^3.0.5",
     "katex": "^0.16.8",
