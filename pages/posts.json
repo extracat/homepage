@@ -12,7 +12,7 @@
       "image": "/cards/og-tablet.png",
       "title": "SberBusiness universal app adaptation for tablet devices",
       "excerpt": "",
-      "nda": true,
+      "nda": false,
       "tags": ["UX/UI", "Mobile"]
     },
     {
@@ -34,7 +34,7 @@
       "image": "/cards/og-dashboard.png",
       "title": "Treasurer's dashboard for corporate clients of SberBank",
       "excerpt": "",
-      "nda": true,
+      "nda": false,
       "tags": ["UX/UI", "Web", "Infographics"]
     },
     {
