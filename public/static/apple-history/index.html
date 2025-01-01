@@ -17,7 +17,7 @@
     setCookie('menuState', stateToFromStr('navmenu'));
     if (!window.location.pathname.endsWith('/index.html')) {
         const newUrl = window.location.origin + window.location.pathname + '/index.html' + window.location.search + window.location.hash;
-        history.replaceState(null, '', newUrl);
+        window.location.href = newUrl;
     }
   }
 </script>
