@@ -1,0 +1,11 @@
+{
+  "files.autoSaveDelay": 500,
+  "files.autoSave": "afterDelay",
+  "workbench.startupEditor": "none",
+  "workbench.settings.openDefaultSettings": true,
+  "javascript.suggestionActions.enabled": false,
+  "editor.lightbulb.enabled": "off",
+  "files.associations": {
+    "*.css": "tailwindcss"
+  }
+}
