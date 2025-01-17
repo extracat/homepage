@@ -37,18 +37,22 @@ export function Footer() {
                 <FaLinkedinIn className='react-icon linkedin-icon' />
               </a>
             </div>
-
+            
+            {/* 
             <div className='col align-right menu-icon'>
               <a href="https://dribbble.com/basistov" title="Dribbble" target="_blank" rel="noopener noreferrer">
                 <TbBrandDribbble className='react-icon dribbble-icon'/>
               </a>
             </div>
+            */}
 
+            {/* 
             <div className='col align-right menu-icon'>
               <a href="https://www.behance.net/basistov" title="Behance" target="_blank" rel="noopener noreferrer">
                 <FaBehance className='react-icon behance-icon'/>
               </a>
             </div>
+            */}
 
           </div>
         </div>
