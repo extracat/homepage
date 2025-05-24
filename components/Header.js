@@ -16,8 +16,19 @@ export function Header() {
             </div>
             */}
             <div className='align-center menu-item'>
-              <Link href="/cv">About / CV</Link>      
+              <Link href="/about">About</Link>      
             </div>
+            <div className='align-center menu-item'>
+              <Link href="/about">Garden</Link>      
+            </div>
+            <div className='align-center menu-item'>
+              <Link href="/about">Now</Link>      
+            </div>
+            {/*
+            <div className='align-center menu-item'>
+              <Link href="/cv">CV</Link>      
+            </div>
+            */}
           </div>
           <div className='col align-right menu-icon'>
             <DarkModeButton />    

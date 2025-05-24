@@ -1,4 +1,5 @@
 import Script from 'next/script'
+import Head from 'next/head'
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Cookies from 'js-cookie';
@@ -48,6 +49,10 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="color-scheme" content="light dark" />
+      </Head>
 
       {/* Global Site Tag (gtag.js) - Google Analytics */}
       <Script
