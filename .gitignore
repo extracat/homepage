@@ -26,7 +26,6 @@
 
 # misc
 .DS_Store
-*.pem
 *.log
 
 # debug
