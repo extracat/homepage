@@ -15,6 +15,8 @@ export function Header() {
               <Link href="/#work">Work</Link>  
             </div>
             */}
+
+            {/*
             <div className='align-center menu-item'>
               <Link href="/about">About</Link>      
             </div>
@@ -24,6 +26,8 @@ export function Header() {
             <div className='align-center menu-item'>
               <Link href="/about">Now</Link>      
             </div>
+            */}
+
             {/*
             <div className='align-center menu-item'>
               <Link href="/cv">CV</Link>      
