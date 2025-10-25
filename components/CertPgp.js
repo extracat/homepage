@@ -18,8 +18,8 @@ const PgpCertIcon = () => (
 const CertPgp = () => {
   const handleDownload = () => {
     const link = document.createElement('a');
-    link.href = '/basistov-gmail-com.asc'; // Path to public key in public/
-    link.download = 'basistov-gmail-com.asc';
+    link.href = '/pgp.asc'; // Path to public key in public/
+    link.download = 'pgp.asc';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
