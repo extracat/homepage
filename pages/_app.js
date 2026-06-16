@@ -38,7 +38,7 @@ function MyApp({ Component, pageProps }) {
 
   useEffect(() => {
     posthog.init(process.env.NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN, {
-      api_host: 'https://eu.i.posthog.com',
+      api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST,
       person_profiles: 'identified_only',
     });
     const handleRouteChange = () => posthog.capture('$pageview');
