@@ -23,7 +23,7 @@
     "unified": "^10.1.2"
   },
   "resolutions": {
-    "next-mdx-remote": "^5.0.0"
+    "next-mdx-remote": "^6.0.0"
   },
   "packageManager": "yarn@4.9.4",
   "engines": {
