@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Cookies from 'js-cookie';
 import * as gtag from '../lib/gtag'
+import posthog from 'posthog-js'
 import '../styles/defaults.scss'
 import '../styles/layout.scss'
 import '../styles/typography-sans.scss'
@@ -34,6 +35,16 @@ function MyApp({ Component, pageProps }) {
       router.events.off("routeChangeComplete", handleRouteChange);
     };
   }, [router.events]);
+
+  useEffect(() => {
+    posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY, {
+      api_host: 'https://eu.i.posthog.com',
+      person_profiles: 'identified_only',
+    });
+    const handleRouteChange = () => posthog.capture('$pageview');
+    router.events.on('routeChangeComplete', handleRouteChange);
+    return () => router.events.off('routeChangeComplete', handleRouteChange);
+  }, []);
   
 
 

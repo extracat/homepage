@@ -540,6 +540,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@posthog/core@npm:^1.32.4":
+  version: 1.32.5
+  resolution: "@posthog/core@npm:1.32.5"
+  dependencies:
+    "@posthog/types": "npm:^1.386.4"
+  checksum: 10/d6090a7f48df0dfde6c7a577fe9a58cc4dd50372b2156447a25624ce8a3d248e6d6ebe36eb2163ac0fc6400f53abbc7a157c49f48e7d92ca3c6e74a9cf15ca63
+  languageName: node
+  linkType: hard
+
+"@posthog/types@npm:^1.386.4":
+  version: 1.386.4
+  resolution: "@posthog/types@npm:1.386.4"
+  checksum: 10/cefd51294c3f150a5dc3984957c3ddf434d02ddc8ffff8a11f2b216e01f054de8b6044d7d2fc50d223be2ba233c44a43fbd30e4323a1141a969249903c7c6d2b
+  languageName: node
+  linkType: hard
+
 "@swc/helpers@npm:0.5.2":
   version: 0.5.2
   resolution: "@swc/helpers@npm:0.5.2"
@@ -724,6 +740,13 @@ __metadata:
   dependencies:
     csstype: "npm:^3.0.2"
   checksum: 10/b355cfa22814e934b381c4f6de67c66652255377c3ddc6a757ea195ccbd0e7095aadfe1a28713d8ab1221222b8f2ec237903f4ec0e54eaf656ac832782d25dd2
+  languageName: node
+  linkType: hard
+
+"@types/trusted-types@npm:^2.0.7":
+  version: 2.0.7
+  resolution: "@types/trusted-types@npm:2.0.7"
+  checksum: 10/8e4202766a65877efcf5d5a41b7dd458480b36195e580a3b1085ad21e948bc417d55d6f8af1fd2a7ad008015d4117d5fdfe432731157da3c68678487174e4ba3
   languageName: node
   linkType: hard
 
@@ -1087,6 +1110,13 @@ __metadata:
     "@types/node": "npm:^16.10.2"
     cookie: "npm:^0.4.0"
   checksum: 10/daaaf97724195e09d7e8852fd9314d7be91ee1c99d7efe965697c35cf01d2656076dced6b7d75765e4a2f4a1102e44afa3b96b196437d590e732563f036631f3
+  languageName: node
+  linkType: hard
+
+"core-js@npm:^3.38.1":
+  version: 3.49.0
+  resolution: "core-js@npm:3.49.0"
+  checksum: 10/31d018f9830b0240ae40869e380595f2d06a8800709ad63299a42a438ba0c8d5805045fa02a20a78f42761d83103b0b71eca982955f5e890fb7cf6b2fe6a9ab1
   languageName: node
   linkType: hard
 
@@ -1585,6 +1615,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"dompurify@npm:^3.3.2":
+  version: 3.4.10
+  resolution: "dompurify@npm:3.4.10"
+  dependencies:
+    "@types/trusted-types": "npm:^2.0.7"
+  dependenciesMeta:
+    "@types/trusted-types":
+      optional: true
+  checksum: 10/e051c70e7a0729d8cc04d40d7863dc8977495140857e81dc668fb548b7a43c7f80cfc973e3c9c0a6cd18b8eaa94ea7de9603daa02d38c8b15a9b32cc25a6f440
+  languageName: node
+  linkType: hard
+
 "eastasianwidth@npm:^0.2.0":
   version: 0.2.0
   resolution: "eastasianwidth@npm:0.2.0"
@@ -1851,6 +1893,13 @@ __metadata:
   version: 3.0.2
   resolution: "extend@npm:3.0.2"
   checksum: 10/59e89e2dc798ec0f54b36d82f32a27d5f6472c53974f61ca098db5d4648430b725387b53449a34df38fd0392045434426b012f302b3cc049a6500ccf82877e4e
+  languageName: node
+  linkType: hard
+
+"fflate@npm:^0.4.8":
+  version: 0.4.8
+  resolution: "fflate@npm:0.4.8"
+  checksum: 10/c0c75029bcbefd0b47cede4ad2a3698f571e38d3d93dfbb96d744c655ec3bf5e31111044c2c01fa3965109874f5be8b5a6b3686b958392693689665cbabf3ece
   languageName: node
   linkType: hard
 
@@ -2183,6 +2232,7 @@ __metadata:
     katex: "npm:^0.16.8"
     next: "npm:^13.4.8"
     nextra: "npm:^2.8.0"
+    posthog-js: "npm:^1.386.8"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
     react-icons: "npm:^4.10.1"
@@ -4214,6 +4264,29 @@ __metadata:
   languageName: node
   linkType: hard
 
+"posthog-js@npm:^1.386.8":
+  version: 1.386.8
+  resolution: "posthog-js@npm:1.386.8"
+  dependencies:
+    "@posthog/core": "npm:^1.32.4"
+    "@posthog/types": "npm:^1.386.4"
+    core-js: "npm:^3.38.1"
+    dompurify: "npm:^3.3.2"
+    fflate: "npm:^0.4.8"
+    preact: "npm:^10.28.2"
+    query-selector-shadow-dom: "npm:^1.0.1"
+    web-vitals: "npm:^5.1.0"
+  checksum: 10/3f54ddc2ddbc2d3852026c59c18701a3ed28bcdb94a88edc9bf0ef2cebb565807bed7a1f3de5b51f15418cdddb4b76c18a254c9fed3c5d3f71fbbd09ad60ffc1
+  languageName: node
+  linkType: hard
+
+"preact@npm:^10.28.2":
+  version: 10.29.2
+  resolution: "preact@npm:10.29.2"
+  checksum: 10/933ab114157448fbb60ab92a4e3d1394c6cc8a29ce77cc454b061797fa1e689929ca5b8cda55cf74a042c929351302f8d8db0456e0ab01fd0ebb1d204ba29192
+  languageName: node
+  linkType: hard
+
 "proc-log@npm:^5.0.0":
   version: 5.0.0
   resolution: "proc-log@npm:5.0.0"
@@ -4249,6 +4322,13 @@ __metadata:
   version: 1.0.2
   resolution: "pseudomap@npm:1.0.2"
   checksum: 10/856c0aae0ff2ad60881168334448e898ad7a0e45fe7386d114b150084254c01e200c957cf378378025df4e052c7890c5bd933939b0e0d2ecfcc1dc2f0b2991f5
+  languageName: node
+  linkType: hard
+
+"query-selector-shadow-dom@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "query-selector-shadow-dom@npm:1.0.1"
+  checksum: 10/f0fc0f3caf2f300a66a741ca3f5ff191c53d548e82287ec3256f88715d5893d16be2abf4d4deaca8203a25be0fb4690109272d5556682abc57a2ba7861d4ace6
   languageName: node
   linkType: hard
 
@@ -5303,6 +5383,13 @@ __metadata:
   version: 2.0.1
   resolution: "web-namespaces@npm:2.0.1"
   checksum: 10/b6d9f02f1a43d0ef0848a812d89c83801d5bbad57d8bb61f02eb6d7eb794c3736f6cc2e1191664bb26136594c8218ac609f4069722c6f56d9fc2d808fa9271c6
+  languageName: node
+  linkType: hard
+
+"web-vitals@npm:^5.1.0":
+  version: 5.3.0
+  resolution: "web-vitals@npm:5.3.0"
+  checksum: 10/55ee66971bf18fa067ba2c29a441a3a5a91ad3e0c419c0867f5a993a2e97d57e5a8a3caf5cf3d9ae89756a65c513ed0a448e501eb7f36912f602febfb7ef268d
   languageName: node
   linkType: hard
 
