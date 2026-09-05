@@ -2,7 +2,6 @@ import Link from 'next/link';
 import { FaLinkedinIn, FaTwitter, FaBehance } from "react-icons/fa";
 import { HiMail } from "react-icons/hi";
 import { TbBrandDribbble } from "react-icons/tb";
-import { FaApple } from "react-icons/fa";
 
 
 
@@ -17,11 +16,6 @@ export function Footer() {
                 <p>Product Designer</p>
             </div>
             
-            <div className='col align-right menu-icon'>
-              <a href="/static/apple-history/index.html" title="Apple History">
-                <FaApple className='react-icon apple-icon'/>
-              </a> 
-            </div>
             <div className='col align-right menu-icon'>
               <a href="mailto:basistov@gmail.com" title="Mail Me">
                 <HiMail className='react-icon mail-icon'/>
