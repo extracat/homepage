@@ -1,7 +1,7 @@
 {
   "deploy": {
-    "install": "corepack enable && yarn install --immutable",
-    "build": "yarn build",
+    "install": "node .yarn/releases/yarn-4.9.4.cjs install --immutable",
+    "build": "node .yarn/releases/yarn-4.9.4.cjs build",
     "runtime": {
       "type": "static",
       "cwd": "./out"
