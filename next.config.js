@@ -6,7 +6,9 @@ const withNextra = require('nextra')({
 })
 
 module.exports = withNextra({
-  // Other Next.js configurations
+  // Cloudflare и Render не умеют обслуживать серверный вывод .next —
+  // сайт целиком статический, поэтому экспортируем в out/
+  output: 'export',
   images: {
     unoptimized: true,
   }
