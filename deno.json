@@ -1,6 +1,6 @@
 {
   "deploy": {
-    "install": "node .yarn/releases/yarn-4.9.4.cjs install --immutable",
+    "install": "YARN_NETWORK_CONCURRENCY=2 node .yarn/releases/yarn-4.9.4.cjs install --immutable",
     "build": "node .yarn/releases/yarn-4.9.4.cjs build",
     "runtime": {
       "type": "static",
