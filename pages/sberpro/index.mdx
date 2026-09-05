@@ -30,14 +30,14 @@ The story began when support team gathered a large list of issues with software 
 
 These problems reduced the performance of client's accounting and treasury departments. So, the only one right solution was **to make a new application**.
 
-![new-app-title.png](./img/new-app-title.png)
+![new-app-title.png](./img/new-app-title.webp)
 
 
 ## UX research
 
 First of all I started with UX research. During in-depth interviews with our key clients I saw our typical users at their workplaces.
 
-![Typical SberPro user’s environment](./img/user-typical.jpg)
+![Typical SberPro user’s environment](./img/user-typical.webp)
 
 This is what I discovered about users:
 
@@ -62,13 +62,13 @@ Here are some examples:
 
 Documents are opened in modal windows and block other content. There is a blurred background there, user’s unable to read the bottom layer. This is a problem when user needs to compare documents or to copy and paste data.
 
-![old-modals.png](./img/old-modals.png)
+![old-modals.png](./img/old-modals.webp)
 
 Also the document’s layout is divided into tabs. Important information is presented on several tabs, so the user has to switch between them. It becomes a real problem when you need to fill in one tab based on the information provided in others.
 
 And there is some notification mess. During communication sessions hundreds of documents are being sent and received.
 
-![old-notif.png](./img/old-notif.png)
+![old-notif.png](./img/old-notif.webp)
 
 Yellow badges tell that some documents are updated. Bold font in the table shows which documents are updated. Also we have notification bubbles, every updated document produces the notification even if there isn’t any error. It is really hard to see which documents require attention. This produces a lot of excessive information for user.
 
@@ -80,7 +80,7 @@ To get rid of this notification mess I decided to take a closer look at the user
 
 At first documents are imported from the ERP to SberPro. After that, the package of documents is sent to the bank. After some time response data and the bank statement arrives, and if there weren’t errors the statement is exported into the ERP system.
 
-![user-flow.png](./img/user-flow.png)
+![user-flow.png](./img/user-flow.webp)
 
 If there were errors, this usually leads to complete reimporting of the whole package of documents and sending them again. Because the main source of truth is the ERP system, and users create ad edit documents in the ERP.
 
@@ -95,11 +95,11 @@ My next step was wireframing. I made an interactive prototype in order to discov
 
 After that I prepared several variants of new UI style. We had brainstorming with our stakeholders and marketing team, and the final UI-style was chosen.
 
-![new-app-ui.png](./img/new-app-ui.png)
+![new-app-ui.png](./img/new-app-ui.webp)
 
 And, of course,  I made a complete design library, and a bunch of guidelines for developers.
 
-![design-system.png](./img/design-system.png)
+![design-system.png](./img/design-system.webp)
 
 New application was build on the new framework and component library, so I had to redesign every atomic component and provide guidelines for them.
 
@@ -115,7 +115,7 @@ Besides the new UI and layout, I solved some UX issues. Here are some improvemen
 
 I got rid of the notifications about every single document. No more bold fonts and notification bubbles. Now we show aggregated information about statuses in widgets. 
 
-![new-app-widget.png](./img/new-app-widget.png)
+![new-app-widget.png](./img/new-app-widget.webp)
 
 > The key idea: users create and edit documents in the ERP, so the main information they need here — the number of documents which get the particular status — error for example. And the main action — to select those documents, and make multiple action on them — make error report and delete, for example. 
 
@@ -123,15 +123,15 @@ Here are two widgets — the left one for all documents’ types, and the right 
 
 The issue of blocking modal windows also was solved. Now all documents can be opened in separate tabs and edited simultaneously. And they don’t have inner tabs, just regular scroll and some accordions.
 
-![new-app-tabs.png](./img/new-app-tabs.png)
+![new-app-tabs.png](./img/new-app-tabs.webp)
 
 Tables also were improved. Now they have filter-tags, showing which filters were applied, they have search bar and new context actions bar at the bottom. Now there are only general actions at the top. Context actions, which can be applied only to the selected records in the table, are at the bottom bar. This helped to clean up top menu. 
 
-![new-app-table.png](./img/new-app-table.png)
+![new-app-table.png](./img/new-app-table.webp)
 
 Also I made dashboard, where user can view aggregated information about all the documents or accounts.
 
-![new-app-dashboard.png](./img/new-app-dashboard.png)
+![new-app-dashboard.png](./img/new-app-dashboard.webp)
 
 
 ## Usability tests
@@ -142,7 +142,7 @@ Our respondents were **10 users** from **10 different companies** from segment o
 
 Here are the results. As you can see, users had the most problems with the synchronization functions. 
 
-![user-results.png](./img/user-results.png)
+![user-results.png](./img/user-results.webp)
 
 
 In fact users could not clearly understand the names of menu items. The main reason is the lack of onboarding. The users who worked with the previous version of SberPro successfully passed the test. It indicates the need of onboarding for new users. Of cause in next releases we solved all these issues.
