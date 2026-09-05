@@ -1,0 +1,10 @@
+{
+  "deploy": {
+    "install": "corepack enable && yarn install --immutable",
+    "build": "yarn build",
+    "runtime": {
+      "type": "static",
+      "cwd": "./out"
+    }
+  }
+}
